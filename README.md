@@ -2,30 +2,28 @@
 
 Partial Differential Equations - SP26 - Tarleton State University
 
-## Requirements
-Build locally with the [LaTeX Workshop Extension](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) in VSCode, or manually compile the files:
-- [TeX Live](https://www.tug.org/texlive/)
+## Requirements / Usage
 
-Alternatively, you can use a ready-made docker container and let it do the work for you:
+There are two ways to build this project:
+- Using [TeX Live](https://www.tug.org/texlive/) and [make](https://www.gnu.org/software/make/) (faster, requires a few GB of storage for install)
+- Using [Docker Engine](https://docs.docker.com/engine/install/) and [act](https://nektosact.com/introduction.html) (slower, but no persistant TeX Live install required)
+
+### TeX Live
+
+For this method, we will require a [TeX Live](https://www.tug.org/texlive/) along with all the required packages used by the TeX sources (see `setup_fedora.sh` for a minimal install).
+
+The use of [make](https://www.gnu.org/software/make/) is optional, but the `Makefile` is configured to build all TeX sources for you by simply running `make`, this will output all the PDF files into the `artifacts/` directory.
+
+Alternatively, you can build the TeX sources manually via `latexmk -pdflua -interaction=nonstopmode -nobibtex -outdir=build -out2dir=artifacts <*.tex>`
+
+You can also use the [LaTeX Workshop Extension](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) in VSCode to build the TeX files, you can configure it to auto-compile, and it can even provide linting. See their documentation for more info, and see above for how to configure the compilation.
+
+### Docker
+
+Since I wanted this project to be able to build itself via GitHub Actions, that means you can also use this method, you can even do so locally without even commiting your changes.
+
+This method requires the following tools to be installed:
 - [act](https://nektosact.com/introduction.html)
 - [Docker Engine](https://docs.docker.com/engine/install/)
 
-## Usage
-
-VSCode / Manual Compilation:
-
-Open any TeX file and click the Build button or `CTRL + ALT + B` to build the file.
-
-This will effectively run (which you can run manually if you're not using VSCode):
-```bash
-latexmk -lualatex -interaction=nonstopmode -outdir=solutions/build/ <file>
-```
-
-The output PDF will be in the `./solutions/build/` directory.
-
-Alternatively, with act / docker you can simply run:
-```bash
-act push -b -q
-```
-
-The PDF files will then be placed in the `./.github/workflows/artifacts/` directory.
+Using the `act push -b` command will spin up a docker container that is linked to your working directory. Then it will *temporarily* install all the required packages, then compile the TeX files. After it has finished it's job the container is deleted, thus you have no persistant TeX Live installation.

@@ -1,5 +1,3 @@
-# Ignore all build folders
-**/build/**
-
-# Ignore locally built artifacts
-.github/workflows/artifacts/
+.vscode/
+build/
+artifacts/
