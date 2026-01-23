@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+
+% Set the page to be letter paper and have small margins
+\usepackage{geometry}
+\geometry{letterpaper, left=15mm, right=15mm, top=15mm, bottom=20mm}
+
+
+% LuaLaTeX font setup
+\usepackage{fontspec}
+\usepackage{unicode-math}
+
+% Text font
+\setmainfont{DejaVu Serif}
+
+% Math font
+\setmathfont{STIX Two Math}
+
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{cancel}
+
+\usepackage{enumitem}
+% \setlist[enumerate]{font={\bfseries}}
+\setlist[enumerate, 1]{label=\textbf{\arabic*}.}
+\setlist[enumerate, 2]{label=(\textbf{\alph*})}
+
+\begin{document}
+
+\noindent
+Jeffrey Morris
+\hfill
+MATH 4306-010
+\newline
+\today
+
+\begin{center}
+    \Large{Homework 2}
+\end{center}
+
+\begin{enumerate}
+    \item Given the function $f(x)=x^2$.
+          \begin{enumerate}
+              \item Find the Fourier series of $f$ over $\left( -\pi,\pi \right)$. \label{1:a}
+              \item Using \ref{1:a}, show that $\frac{\pi}{12}=\sum_{n=1}^{\infty} \frac{\left( -1 \right)^{n+1}}{n^2}$.
+              \item Using \ref{1:a} and Parseval's identify, show that $\frac{\pi^4}{90}=\sum_{n=1}^{\infty}\frac{1}{n^4}$.
+          \end{enumerate}
+    \item Given the function:
+          \begin{center}
+              $
+                  f(x)=
+                  \begin{cases}
+                      0,       & \text{if $-\pi < x \leq 0$} \\
+                      \sin(x), & \text{if $0 < x \leq \pi$}
+                  \end{cases}
+              $
+          \end{center}
+          \begin{enumerate}
+              \item Find the Fourier series of $f(x)$ over $\left( -\pi,\pi \right)$. \label{2:a}
+              \item Using \ref{2:a} and Parseval's identity, show that:
+                    \begin{center}
+                        $\frac{\pi^2}{16}-\frac{1}{2}=\sum_{\text{$k =$ even}}^{\infty}\frac{1}{\left( k^2 - 1 \right)^2}.$
+                    \end{center}
+          \end{enumerate}
+    \item Sketch the even and odd extensions of each of the following functions, and find the Fourier cosine and sine integrals for $f$. Each function is given in the interval $0<x<\infty$.
+          \begin{enumerate}
+              \item $f(x)=e^{-x}$
+              \item $
+                        f(x)=
+                        \begin{cases}
+                            1, & 0<x<1 \\
+                            0, & 1<x
+                        \end{cases}
+                    $
+          \end{enumerate}
+    \item Find the Fourier integral representation of the function $f_t(x)$ given below. This is sometimes called a "window" because it is "open" for $t-x < x < t+h$.
+          \begin{center}
+              $
+                  f_t(x)=
+                  \begin{cases}
+                      1, & \left| x-t \right| <h \\
+                      0, & \left| x-t \right| >h
+                  \end{cases}
+              $
+          \end{center}
+    \item Find the Fourier integral representation of each of these functions:
+          \begin{enumerate}
+              \addtocounter{enumii}{2}
+              \item $
+                        f(x)=
+                        \begin{cases}
+                            \left| \sin(x) \right|, & -\pi<x<\pi       \\
+                            0,                      & \text{otherwise}
+                        \end{cases}
+                    $
+          \end{enumerate}
+\end{enumerate}
+
+\end{document}
