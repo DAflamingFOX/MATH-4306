@@ -1,0 +1,46 @@
+name: Build LaTeX documents
+
+on:
+  - push
+  - workflow_dispatch
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-22.04
+    container:
+      image: ghcr.io/xu-cheng/texlive-debian:latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      # This will find all the .tex files in the 'solutions' dir, then compile them individually.
+      - name: Compile LaTeX documents
+        run: |
+          find solutions -maxdepth 1 -name '*.tex' -type f \
+          -exec latexmk -lualatex -interaction=nonstopmode -outdir=solutions/build/ {} \;
+
+      # --- LOCAL (act) ---
+      # This is useful if you're running act locally as opposed to manually compiling all the files
+      # You can either run `act push -b` to 'bind' your working dir to the container and then
+      # the files will immediately be accessable in your working dir. Alternatively, if you don't
+      # want act to mess up your working dir, you can just use `act --reuse` and then interact with
+      # the container afterwards using `docker exec -it <container-id> /bin/bash`.
+      - name: Copy PDFs to artifact folder (local only)
+        if: ${{ env.ACT }}
+        run: |
+          mkdir -p .github/workflows/artifacts/
+          find solutions/build -maxdepth 1 -name '*.pdf' -type f \
+          -exec echo {} \; \
+          -exec cp {} .github/workflows/artifacts/ \;
+
+      # This will upload the PDF files in a single zip file on the action workflow page.
+      # Note that artifacts are only valid for 90 days, after which point they are deleted,
+      # So any expired artifacts would need to be re-run or build locally (see above).
+      - name: Upload PDF files
+        if: ${{ !env.ACT }}
+        uses: actions/upload-artifact@v6
+        with:
+          name: latex-pdfs
+          path: solutions/build/*.pdf
+
+
