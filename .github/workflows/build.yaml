@@ -8,13 +8,10 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
     container:
-      image: fedora:43
+      image: ghcr.io/daflamingfox/texlive-docker/texlive:full
 
     steps:
       - uses: actions/checkout@v6
-
-      - name: Install system dependencies
-        run: ./setup_fedora.sh
 
       - name: Compile LaTeX documents
         run: make all
