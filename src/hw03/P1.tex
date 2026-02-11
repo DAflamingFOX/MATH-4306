@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+
+\input{src/preamble.tex}
+
+\begin{document}
+
+\begin{align*}
+    f(x)  & = \sum_{-\infty}^{\infty} c_{n} e^{jnx}                                                         \\
+    c_{n} & = \frac{1}{2\pi}\int_{n=-\pi}^{\pi}f(x)e^{-jnx}\,dx                                             \\
+    c_{n} & = \frac{1}{2\pi} \int_{-\pi}^{\pi}e^{2x}\cdot e^{-jnx}\,dx                                      \\
+    c_{n} & = \frac{1}{2\pi} \int_{-\pi}^{\pi} e^{2x - jnx}\, dx                                            \\
+    c_{n} & = \frac{1}{2\pi} \int_{-\pi}^{\pi} e^{x (2 - jn)}\, dx                                          \\
+    c_{n} & = \frac{1}{2\pi} \left[ \frac{1}{2-jn}\cdot e^{x (2 - jn)}  \right]_{-\pi}^{\pi}                \\
+    c_{n} & = \frac{1}{2\pi} \cdot \frac{1}{2-jn} \left[ e^{\pi(2-jn)} - e^{-\pi(2-jn)} \right]             \\
+    c_{n} & = \frac{1}{2\pi(2-jn)} \left[ e^{2\pi}\cdot e^{-jn\pi} - e^{-2\pi}\cdot e^{jn\pi} \right]       \\
+    c_{n} & = \frac{1}{2\pi(2-jn)} \left[ e^{2\pi}\cdot (-1)^{n} - e^{-2\pi}\cdot (-1)^{n} \right]          \\
+    c_{n} & = \frac{(-1)^{n}}{2\pi(2-jn)} \left[ e^{2\pi} - e^{-2\pi} \right]                               \\
+    c_{n} & = \frac{(-1)^{n}}{2\pi(2-jn)} \cdot 2\sinh(2\pi)                                                \\
+    c_{n} & = \frac{(-1)^{n} \cdot \sinh(2\pi)}{\pi(2-jn)}                                                  \\
+    f(x)  & = \sum_{n=-\infty}^{\infty} \left( \frac{(-1)^{n} \cdot \sinh(2\pi)}{\pi(2-jn)} \right) e^{jnx}
+\end{align*}
+
+\begin{align*}
+    \frac{1}{2\pi}\int_{-\pi}^{\pi}\left| f(x) \right|^{2}       & = \sum_{n=-\infty}^{\infty}\left| c_{n} \right|^{2}                                      \\
+    \text{LHS:} \quad                                            & \frac{1}{2\pi}\int_{-\pi}^{\pi}\left| e^{2x} \right|^{2}                                 \\
+                                                                 & \frac{1}{2\pi} \int_{-\pi}^{\pi}e^{4x}                                                   \\
+                                                                 & \frac{1}{2\pi} \left[ \frac{e^{4x}}{4} \right]_{-\pi}^{\pi}                              \\
+                                                                 & \frac{1}{2\pi} \cdot \frac{1}{4} \left[ e^{4\pi} - e^{-4\pi} \right]                     \\
+                                                                 & \frac{1}{8\pi} \cdot 2\sinh(4\pi)                                                        \\
+                                                                 & \frac{\sinh(4\pi)}{4\pi}                                                                 \\
+    \text{RHS:} \quad                                            & \sum_{n=-\infty}^{\infty}\left| \frac{(-1)^{n} \cdot \sinh(2\pi)}{\pi(2-jn)} \right|^{2} \\
+                                                                 & \sum_{n=-\infty}^{\infty} \frac{\sinh^{2}(2\pi)}{\pi^{2}(4+n^{2})}                       \\
+    \\
+    \frac{\sinh(4\pi)}{4\pi}                                     & = \frac{\sinh^{2}(2\pi)}{\pi^{2}} \sum_{n=-\infty}^{\infty} \frac{1}{4+n^{2}}            \\
+    \frac{\sinh(4\pi) \cdot \pi^{2}}{4\pi \cdot \sinh^{2}(2\pi)} & = \sum_{n=-\infty}^{\infty} \frac{1}{4+n^{2}}                                            \\
+    \frac{2\sinh(2\pi)\cosh(2\pi) \cdot \pi}{4\sinh^{2}(2\pi)}   & = \sum_{n=-\infty}^{\infty} \frac{1}{4+n^{2}}                                            \\
+    \frac{\cosh(2\pi) \cdot \pi}{2\sinh(2\pi)}                   & = \sum_{n=-\infty}^{\infty} \frac{1}{4+n^{2}}                                            \\
+    \frac{\pi \coth(2\pi)}{2}                                    & = \sum_{n=-\infty}^{\infty} \frac{1}{4+n^{2}}
+\end{align*}
+
+
+\end{document}

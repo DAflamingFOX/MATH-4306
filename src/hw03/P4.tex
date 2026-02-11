@@ -1,0 +1,28 @@
+\documentclass[12pt]{article}
+
+\input{src/preamble.tex}
+
+\begin{document}
+
+\begin{gather*}
+    \lim_{t \rightarrow \infty} u(x,t) = v(x) \qquad \text{and} \qquad \lim_{t \rightarrow \infty} \frac{\partial u}{\partial t} = 0 \\
+    \\
+    \frac{d^{2}v}{dx^{2}} + r = 0 \\
+    v(0) = T_{0},\qquad \frac{dv(a)}{dx} = 0 \\
+    v'' = -r \\
+    v' = -rx + A \\
+    v = \frac{-rx^{2}}{2} + Ax + B\\
+    \\
+    v(0) = B\\
+    B = T_{0}\\
+    \\
+    v' = -rx + A \\
+    v'(a) = -ra + A \\
+    0 = -ra + A \\
+    A = ra \\
+    \\
+    v(x) = \frac{-rx^{2}}{2} + rax + T_{0} \\
+    v(x) = \boxed{T_{0} + \frac{rx}{2}(2a - x)}
+\end{gather*}
+
+\end{document}

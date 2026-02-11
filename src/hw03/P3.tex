@@ -1,0 +1,34 @@
+\documentclass[12pt]{article}
+
+\input{src/preamble.tex}
+
+\begin{document}
+
+\begin{gather*}
+    \lim_{t \rightarrow \infty} u(x,t) = v(x) \qquad \text{and} \qquad \lim_{t \rightarrow \infty} \frac{\partial u}{\partial t} = 0 \\
+    \\
+    \frac{d^{2}v}{d x^{2}}-\gamma^{2}(v(x) - U) = 0 \\
+    v(0) = T_{0}, \quad v(a)=T_{1} \\
+    \\
+    v'' - \gamma^{2}(v-U) = 0 \\
+    w(x) = v(x) - U, \qquad w'=v', \qquad w''=v'' \\
+    w'' - \gamma^{2}w = 0 \\
+    \text{Assume: }w=e^{rx}, \qquad w' = re^{rx}, \qquad w''=r^{2}e^{rx} \\
+    r^{2}e^{rx}-\gamma^{2}e^{rx} = 0 \\
+    r^{2} - \gamma^{2} = 0 \\
+    r = \pm \gamma \\
+    w(x) = Ae^{\gamma x}+Be^{-\gamma x} \\
+    w(x) = A\cosh(\gamma x) + B\sinh(\gamma x) \\
+    v(x) = A\cosh(\gamma x) + B\sinh(\gamma x) + U \\
+    \\
+    v(0) = A\cosh(0) + B\sinh(0) + U\\
+    T_{0}=A + U \\
+    A = T_{0} - U \\
+    \\
+    v(a) = (T_{0} - U)\cosh(\gamma a) + B\sinh(\gamma a) + U = T_{1}\\
+    B = \frac{(T_{1} - U) - (T_{0} - U)\cosh(\gamma a)}{\sinh(\gamma a)} \\
+    \\
+    v(x) = \boxed{(T_{0} - U)\cdot \cosh(\gamma x) + \frac{(T_{1} - U) - (T_{0} - U)\cosh(\gamma a)}{\sinh(\gamma a)}\cdot \sinh(\gamma x)}
+\end{gather*}
+
+\end{document}

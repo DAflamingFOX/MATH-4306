@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+
+\input{src/preamble.tex}
+
+\begin{document}
+
+\begin{gather*}
+    w(x,t) = X(x)T(t) \\
+    \frac{\partial w}{\partial x} = X'(x)T(t), \qquad \frac{\partial w}{\partial t} = X(x)T'(t)\\
+    \frac{\partial^{2} w}{\partial x^{2}} = X''(x)T(t) \\
+    \\
+    X''(x)T(t) = \frac{1}{k}X(x)T'(t) \\
+    \frac{X''(x)}{X(x)}=\frac{T'(t)}{kT(t)} = p = -\lambda^{2} \\
+    X''+\lambda^{2} X = 0, \qquad T'+\lambda^{2}kT = 0 \\
+    X(x) = C_{1}\cos(\lambda x) + C_{2}\sin(\lambda x) \\
+    X(0) = C_{1}\cos(0) + C_{2}\sin(0) \\
+    C_{1} = 0 \\
+    X(x) = C_{2}\sin(\lambda x) \\
+    X(a) = C_{2}\sin(\lambda a) \\
+    0 = \sin(\lambda a) \Rightarrow \text{True when } \lambda = \frac{n\pi}{a} \\
+    \\
+    \lambda_{n}=\frac{n\pi}{a},\qquad X_{n}(x)=\sin\left(\frac{n\pi x}{a}\right) \\
+    w(x,t) = \sum_{n=1}^{\infty}b_{n}\sin\left(\frac{n\pi x}{a}\right) \cdot e^{-\left( \frac{n\pi}{a} \right)^{2}kt} \\
+    \\
+    w(x,0)=\sum_{n=1}^{\infty}b_{n}\sin\left(\frac{n\pi x}{a}\right) \\
+    w(x,0)=\sum_{n=1}^{\infty}b_{n}\sin\left(\frac{n\pi x}{a}\right) \\
+    b_{n}=\frac{2}{a}\int_{0}^{a}g(x)\sin\left(\frac{n\pi x}{a}\right)\, dx \\
+    b_{n}=\frac{2}{a}\int_{0}^{a}\beta(a-x)\sin\left(\frac{n\pi x}{a}\right)\, dx \\
+    b_{n}=\frac{2\beta}{a}\int_{0}^{a}a\sin\left(\frac{n\pi x}{a}\right) - x\sin\left(\frac{n\pi x}{a}\right)\, dx \\
+    b_{n} = 2\beta \int_{0}^{a}\sin\left( \frac{n\pi x}{a} \right)\,dx - \frac{2\beta}{a} \int_{0}^{a}x\sin\left( \frac{n\pi x}{a} \right) \, dx \\
+    b_{n} = 2\beta \left[ \frac{-a}{n\pi} \cos\left( \frac{n \pi x}{a} \right) \right]_{0}^{a} - \frac{2\beta}{a}\left[ \left. \frac{-ax}{n\pi} \cos\left( \frac{n \pi x}{a} \right) \right|_{0}^{a} + \frac{a}{n\pi} \int_{0}^{a}\cos\left( \frac{n\pi x}{a} \right)\, dx \right] \\
+    b_{n} = \frac{-2\beta a}{n\pi} \left[ (-1)^{n} - 1 \right] - \frac{2\beta}{a}\left[ \frac{-a^{2}}{n\pi}(-1)^{n} + \frac{a}{n\pi} \left[ \frac{a}{n\pi} \sin\left(  \frac{n\pi x}{a} \right) \right]_{0}^{a} \right] \\
+    b_{n} = \frac{2\beta a}{n\pi} \left[ 1 - (-1)^{n} \right] - \frac{2\beta}{a} \left[ \frac{-a^{2}(-1)^{n}}{n\pi} \right] \\
+    b_{n} = \frac{2\beta a}{n\pi} \left[ 1 - (-1)^{n} \right] + \frac{2\beta a(-1)^{n}}{n\pi} \\
+    b_{n} = \frac{2\beta a}{n\pi} \left[ 1 - (-1)^{n} + (-1)^{n} \right] \\
+    b_{n} = \frac{2\beta a}{n \pi}\\
+    w(x, 0) = \sum_{n=1}^{\infty} \frac{2\beta a}{n \pi} \sin\left( \frac{n\pi x}{a} \right) \\
+    w(x, t) = \boxed{\sum_{n=1}^{\infty} \frac{2\beta a}{n \pi} \sin\left( \frac{n\pi x}{a} \right) \cdot e^{-\left( \frac{n\pi}{a} \right)^{2}kt} }
+\end{gather*}
+
+\end{document}

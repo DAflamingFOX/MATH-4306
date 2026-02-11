@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+
+\input{src/preamble.tex}
+
+\begin{document}
+
+\begin{gather*}
+    w(x,t) = X(x)T(t) \\
+    \frac{\partial w}{\partial x} = X'(x)T(t), \qquad \frac{\partial w}{\partial t} = X(x)T'(t)\\
+    \frac{\partial^{2} w}{\partial x^{2}} = X''(x)T(t) \\
+    \\
+    X''(x)T(t) = \frac{1}{k}X(x)T'(t) \\
+    \frac{X''(x)}{X(x)}=\frac{T'(t)}{kT(t)} = p = -\lambda^{2} \\
+    X''+\lambda^{2} X = 0, \qquad T'+\lambda^{2}kT = 0 \\
+    X(x) = C_{1}\cos(\lambda x) + C_{2}\sin(\lambda x) \\
+    X(0) = C_{1}\cos(0) + C_{2}\sin(0) \\
+    C_{1} = 0 \\
+    X(x) = C_{2}\sin(\lambda x) \\
+    X(a) = C_{2}\sin(\lambda a) \\
+    0 = \sin(\lambda a) \Rightarrow \text{True when } \lambda = \frac{n\pi}{a} \\
+    \\
+    \lambda_{n}=\frac{n\pi}{a},\qquad X_{n}(x)=\sin\left(\frac{n\pi x}{a}\right) \\
+    w(x,t) = \sum_{n=1}^{\infty}b_{n}\sin\left(\frac{n\pi x}{a}\right) \cdot e^{-\left( \frac{n\pi}{a} \right)^{2}kt} \\
+    \\
+    w(x,0)=\sum_{n=1}^{\infty}b_{n}\sin\left(\frac{n\pi x}{a}\right) \\
+    T_{0}=\sum_{n=1}^{\infty}b_{n}\sin\left(\frac{n\pi x}{a}\right) \\
+    b_{n}=\frac{2}{a}\int_{0}^{a}g(x)\sin\left(\frac{n\pi x}{a}\right)\, dx \\
+    b_{n}=\frac{2}{a}\int_{0}^{a}T_{0}\sin\left(\frac{n\pi x}{a}\right)\, dx \\
+    b_{n}=\frac{2T_{0}}{a}\int_{0}^{a}\sin\left(\frac{n\pi x}{a}\right)\, dx \\
+    b_{n}=\frac{2T_{0}}{a}\left[ \frac{-a}{n\pi}\cos(\frac{n\pi x}{a}) \right]_{0}^{a} \\
+    b_{n}=\frac{-2T_{0}}{n\pi}\left[ \cos(n\pi) - \cos(0) \right] \\
+    b_{n}=\frac{-2T_{0}}{n\pi}\left[ (-1)^{n} - 1 \right] \\
+    b_{n}=\begin{cases}
+        \frac{4T_{0}}{n\pi}, & \text{$n$ is odd}  \\
+        0,                   & \text{$n$ is even}
+    \end{cases} \\
+    w(x, 0) = \sum_{n=\text{odd}}^{\infty}\frac{4T_{0}}{n\pi} \sin\left(\frac{n\pi x}{a}\right) \\
+    w(x, t) = \boxed{\frac{4T_{0}}{\pi} \sum_{n=\text{odd}}^{\infty} \frac{\sin\left(\frac{n\pi x}{a}\right)}{n} \cdot e^{-\left( \frac{n\pi}{a} \right)^{2}kt}}
+\end{gather*}
+
+\end{document}

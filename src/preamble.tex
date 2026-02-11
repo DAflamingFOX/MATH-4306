@@ -1,0 +1,63 @@
+% Set the page to be letter paper and have small margins
+\usepackage{geometry}
+\geometry{letterpaper, left=15mm, right=15mm, top=15mm, bottom=20mm}
+
+% LuaLaTeX font setup
+\usepackage{fontspec}
+\usepackage{unicode-math}
+
+% Text font
+\setmainfont{DejaVu Serif}
+
+% Math font
+\setmathfont{STIX Two Math}
+
+\allowdisplaybreaks
+
+\usepackage{standalone}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{cancel}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{booktabs}
+
+% \usepackage{hyperref}
+\usepackage{cleveref}
+
+
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries\itshape}{\thesubsection}{1em}{}
+
+\usepackage{enumitem}
+\setlist[enumerate, 1]{label=\textbf{\arabic*}.}
+\setlist[enumerate, 2]{label=\textbf{\alph*}.}
+
+% \usepackage[style=ieee]{biblatex}
+% \addbibresource{src/refs.bib}
+
+\makeatletter
+\newcommand{\course}[1]{\def\@course{#1}}
+
+\renewcommand{\maketitle}{
+    \noindent
+    \@author \hfill \@course \newline
+    \@date
+    \begin{center}
+        \large\textbf{\@title}
+    \end{center}
+    \bigskip
+}
+
+\author{Jeffrey Morris}
+\course{MATH 4306-010}
+\date{\today}

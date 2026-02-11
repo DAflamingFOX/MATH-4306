@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+
+\input{src/preamble.tex}
+
+\title{Homework 3}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+    \item Find the complex Fourier series of $f(x)=e^{2x}$ in the interval $-\pi<x<\pi$. Where $f(x)=f(x+2\pi)$. Using Parseval's identity, show that:
+          \begin{gather*}
+              \sum_{k=0}^{\infty}\frac{1}{\left( 2-ki \right)^2} = \frac{\pi\coth(2\pi)}{2}
+          \end{gather*}
+          \input{src/hw03/P1.tex}
+    \item Find the complex Fourier integral representation of the following functions:
+          \begin{enumerate}
+              \item $
+                        f(x)=\begin{cases}
+                            e^{-x}, & x>0 \\
+                            0,      & x<0
+                        \end{cases}
+                    $
+                    \input{src/hw03/P2a.tex}
+              \item $
+                        f(x) = \begin{cases}
+                            \sin(x), & 0<x<\pi          \\
+                            0,       & \text{elsewhere}
+                        \end{cases}
+                    $
+                    \input{src/hw03/P2b.tex}
+          \end{enumerate}
+    \item State and solve the steady-state problem corresponding to:
+          \begin{align*}
+               & \frac{\partial^{2} u}{\partial x^{2}} - \gamma^{2}(u - U)=\frac{1}{k} \frac{\partial u}{\partial t}, &  & 0<x<a, &  & 0<t \\
+               & u(0, t)=T_{0}, \quad u(a,t)= T_{1},                                                                  &  &        &  & 0<t \\
+               & u(x, 0) = 0,                                                                                         &  & 0<x<a
+          \end{align*}
+          \input{src/hw03/p3.tex}
+    \item Find the steady-state solution of:
+          \begin{align*}
+               & \frac{\partial^{2} u}{\partial x^{2}} + r = \frac{1}{k} \frac{\partial u}{\partial t}, &  & 0<x<a, &  & 0<t \\
+               & u(0, t)=T_{0}, \quad \frac{\partial u}{\partial x}(a, t)=0,                            &  &        &  & 0<t
+          \end{align*}
+          \input{src/hw03/p4.tex}
+\end{enumerate}
+
+In \cref{ex:5,ex:6}, solve the problem
+\begin{align*}
+     & \frac{\partial^{2} w}{\partial x^{2}} = \frac{1}{k} \frac{\partial w}{\partial t}, &  & 0<x<a, &  & 0<t \\
+     & w(0, t)=0,\quad w(a,t)=0,                                                          &  &        &  & 0<t \\
+     & w(x, 0)=g(x),                                                                      &  & 0<x<a
+\end{align*}
+for the given function $g(x)$.
+
+\begin{enumerate}[resume]
+    \item $g(x) = T_{0}$ (constant) \label{ex:5}
+    \input{src/hw03/p5.tex}
+    \item $g(x) = \beta(a-x)$ ($\beta$ is constant) \label{ex:6}
+    \input{src/hw03/p6.tex}
+\end{enumerate}
+
+\end{document}
