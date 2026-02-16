@@ -3,7 +3,7 @@ BUILD_DIR := build
 ARTIFACT_DIR := artifacts
 
 # Get all .tex files in source directory.
-TEX_FILES := $(wildcard $(SRC_DIR)/*.tex)
+TEX_FILES := $(filter-out $(SRC_DIR)/preamble.tex, $(wildcard $(SRC_DIR)/*.tex))
 # Generate all .pdf files based on .tex files
 PDF_FILES := $(patsubst $(SRC_DIR)/%.tex, $(BUILD_DIR)/%.pdf, $(TEX_FILES))
 

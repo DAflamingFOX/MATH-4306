@@ -1,0 +1,24 @@
+\documentclass[12pt]{article}
+
+\include{src/preamble.tex}
+
+\begin{document}
+\begin{align*}
+    f(x)       & =\frac{1}{\pi}\int_{0}^{\infty} A(\lambda)\cos(\lambda x) + B(\lambda) \sin(\lambda x) \,d\lambda                                                                                                        \\
+    A(\lambda) & = \int_{-\infty}^{\infty} f(x)\cos(\lambda x)\,dx                                                                                                                                                        \\
+    A(\lambda) & = \int_{t-h}^{t+h} \cos(\lambda x)\,dx                                                                                                                                                                   \\
+    A(\lambda) & = \frac{1}{\lambda} \left[ sin(\lambda x) \right]_{t-h}^{t+h}                                                                                                                                            \\
+    A(\lambda) & = \frac{1}{\lambda} \left[ \sin\left( (t+h)\lambda \right) - \sin\left( (t-h) \lambda \right) \right]                                                                                                    \\
+    B(\lambda) & = \int_{-\infty}^{\infty} f(x)\sin(\lambda x)\,dx                                                                                                                                                        \\
+    B(\lambda) & = \int_{t-h}^{t+h} \sin(\lambda x)\,dx                                                                                                                                                                   \\
+    B(\lambda) & = \frac{-1}{\lambda} \left[ \cos(\lambda x) \right]_{t-h}^{t+h}                                                                                                                                          \\
+    B(\lambda) & = \frac{-1}{\lambda} \left[ \cos\left( (t+h) \lambda \right) - \cos\left( (t-h) \lambda \right) \right]                                                                                                  \\
+    f(x)       & = \frac{1}{\pi} \int_{0}^{\infty} \frac{\cos(\lambda x)}{\lambda} \left[ \sin\left( (t+h)\lambda \right) - \sin\left( (t-h) \lambda \right) \right]                                                      \\
+               & \qquad \qquad - \frac{\sin(\lambda x)}{\lambda} \left[ \cos\left( (t+h) \lambda \right) - \cos\left( (t-h) \lambda \right) \right] \, d\lambda                                                           \\
+    f(x)       & = \frac{1}{\pi} \int_{0}^{\infty} \frac{1}{\lambda} \left[ \cos(\lambda x)\sin\left( (t+h) \lambda \right) - \cos(\lambda x)\sin\left( (t-h) \lambda \right) \right.                                     \\
+               & =  \qquad \qquad \left. - \sin(\lambda x)\cos\left( (t+h) \lambda \right) + \sin(\lambda x)\cos\left( (t-h) \lambda \right) \right]\, d\lambda                                                           \\
+    \sin(A-B)  & = \sin(A)\cos(B) - \cos(A)\sin(B)                                                                                                                                                                        \\
+    f(x)       & = \frac{1}{\pi} \int_{0}^{\infty} \frac{1}{\lambda} \left[ \sin\left( \left( (t+h) \lambda \right) - \lambda x \right) - \sin\left( \left( (t-h) \lambda \right) - \lambda x \right) \right] \, d\lambda \\
+    f(x)       & = \boxed{\frac{1}{\pi} \int_{0}^{\infty} \frac{1}{\lambda} \left[ \sin\left( \lambda(t + h - x) \right) - \sin\left( \lambda(t - h - x) \right) \right]\,d\lambda}
+\end{align*}
+\end{document}

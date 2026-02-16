@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+
+\include{src/preamble.tex}
+
+\begin{document}
+\begin{align*}
+    f_e(x) & =\begin{cases}
+                  \sin(x),  & 0<x< \pi  \\
+                  \sin(-x), & -\pi <x<0
+              \end{cases}              \\
+    f_e(x) & =a_0+\sum_{n=1}^{\infty}a_n\cos(nx)
+\end{align*}
+\begin{align*}
+    a_0 & =\frac{1}{L}\int_{0}^{L}f(x)\,dx                 \\
+    a_0 & =\frac{1}{\pi}\int_{0}^{\pi}\sin(x)\,dx          \\
+    a_0 & =\frac{1}{\pi}\left[ -\cos(x) \right]_0^\pi      \\
+    a_0 & =\frac{1}{\pi}\left[ -\cos(\pi) -\cos(0) \right] \\
+    a_0 & =\boxed{\frac{2}{\pi}}
+\end{align*}
+\begin{align*}
+    a_n= & \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos(nx)\,dx                                                                                                                                     \\
+    a_n= & \frac{2}{\pi}\int_{0}^{\pi}\sin(x)\cos(nx)\,dx                                                                                                                                     \\
+    a_n= & \frac{2}{\pi}\int_{0}^{\pi}\frac{1}{2}\left[\sin(x+nx)+sin(x-nx)\right]\,dx                                                                                                        \\
+    a_n= & \frac{1}{\pi}\sin\left((n+1)\cdot x\right)-\sin\left((n-1)\cdot x\right)\,dx                                                                                                       \\
+    a_n= & \frac{1}{\pi} \left[ \frac{-\cos\left((n+1) \cdot x\right)}{n+1} + \frac{\cos\left((n-1)\cdot x\right)}{n-1} \right]_{0}^{\pi}                                                     \\
+    a_n= & \frac{1}{\pi} \left[ \left( \frac{-\cos\left((n+1) \cdot \pi\right)}{n+1} + \frac{\cos\left((n-1)\cdot\pi\right)}{n-1}\right) - \left(\frac{-1}{n+1} + \frac{1}{n+1}\right)\right] \\
+    a_n= & \frac{1}{\pi} \left[ \frac{(-1)^n}{n+1} + \frac{-(-1)^n}{n-1} + \frac{1}{n+1} + \frac{-1}{n-1}\right]                                                                              \\
+    a_n= & \frac{1}{\pi} \left[ \frac{1+(-1)^n}{n+1} - \frac{1+(-1)^n}{n-1} \right]                                                                                                           \\
+    a_n= & \frac{1+(-1)^n}{\pi} \left[ \frac{-2}{n^2-1} \right]                                                                                                                               \\
+    a_n= &
+    \boxed{
+        \begin{cases}
+            0,                                          & \text{if $n$ is odd}  \\
+            \frac{-4}{\left( n^2 - 1 \right)\cdot \pi}, & \text{if $n$ is even}
+        \end{cases}
+    }
+\end{align*}
+\begin{align*}
+    f_e(x) & =a_0+\sum_{n=1}^{\infty}a_n\cos(\frac{n\pi x}{L})                                                           \\
+    f_e(x) & =\frac{2}{\pi}+\sum_{n=\text{even}}^{\infty}\frac{-4\cos(nx)}{\left( n^2 -1 \right)\pi}                     \\
+    f_e(x) & =\boxed{\frac{2}{\pi} - \frac{4}{\pi} \sum_{n=\text{even}}^{\infty}\frac{\cos(nx)}{\left( n^2 - 1 \right)}}
+\end{align*}
+\begin{align*}
+    f(0)          & =\sin(0)=0                                                                                      \\
+    f(0)          & =\frac{2}{\pi}-\frac{4}{\pi}\sum_{n=\text{even}}^{\infty}\frac{\cos(0)}{\left( n^2 - 1 \right)} \\
+    \frac{2}{\pi} & =\frac{4}{\pi}\sum_{n=\text{even}}^{\infty}\frac{1}{\left( n^2 - 1 \right)}                     \\
+    \frac{1}{2}   & =\sum_{n=\text{even}}^{\infty} \frac{1}{(n-1)(n+1)}                                             \\
+    \frac{1}{2}   & =\boxed{\sum_{n=1}^{\infty}\frac{1}{(2n-1)(2n+1)}}
+\end{align*}
+\end{document}

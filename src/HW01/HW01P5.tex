@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+
+\include{src/preamble.tex}
+
+\begin{document}
+\begin{align*}
+    f(-x) & =\frac{|-x|}{-x}                     \\
+    f(-x) & = -\frac{|x|}{x}                     \\
+    -f(x) & =-\frac{|x|}{x}                      \\
+    -f(x) & =f(-x)\Rightarrow f(x)\text{ is odd}
+\end{align*}
+\begin{gather*}
+    \text{Since $f(x)$ is odd, } a_0=\boxed{0} \text{ and } a_n=\boxed{0}
+\end{gather*}
+\begin{align*}
+    b_n & =\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(nx)\,dx                        \\
+    b_n & =\frac{2}{\pi}\int_{0}^{\pi}1\cdot\sin(nx)\,dx                         \\
+    b_n & =\frac{2}{\pi}\left[ \frac{-\cos(nx)}{n} \right]_0^\pi                 \\
+    b_n & =\frac{2}{\pi}\left[ \frac{-\cos(n\pi)}{n} + \frac{\cos(0)}{n} \right] \\
+    b_n & =\frac{2}{\pi}\left[ \frac{-(-1)^n}{n} + \frac{1}{n} \right]           \\
+    b_n & =
+    \boxed{
+        \begin{cases}
+            0,              & \text{if $n$ is even} \\
+            \frac{4}{n\pi}, & \text{if $n$ is odd}
+        \end{cases}
+    }
+\end{align*}
+\begin{align*}
+    f(x) & =a_0+\sum_{n=1}^{\infty}\left( a_n\cos(nx)+b_n\sin(nx) \right)     \\
+    f(x) & =\boxed{\sum_{n=odd}^{\infty}\left( \frac{4}{n\pi}sin(nx) \right)}
+\end{align*}
+\end{document}

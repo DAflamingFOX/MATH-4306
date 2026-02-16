@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+
+\include{src/preamble.tex}
+
+\begin{document}
+\begin{align*}
+    f(-x) & =(-x)^2                      \\
+    f(-x) & =x^2                         \\
+    f(x)  & =x^2 \Rightarrow \text{even}
+\end{align*}
+\begin{align*}
+    a_0 & =\frac{1}{2\pi}\int_{-\pi}^{\pi}f(x)\,dx         \\
+    a_0 & =\frac{1}{\pi}\int_{0}^{\pi}x^2\,dx              \\
+    a_0 & =\frac{1}{\pi}\left[ \frac{x^3}{3} \right]_0^\pi \\
+    a_0 & =\frac{1}{\pi}\left[ \frac{\pi^3}{0} - 0 \right] \\
+    a_0 & =\boxed{\frac{\pi^2}{3}}
+\end{align*}
+\begin{align*}
+    a_n & =\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos(nx)\,dx                                                            \\
+    a_n & =\frac{2}{\pi}\int_{0}^{\pi}x^2\cos(nx)\,dx                                                                \\
+    a_n & =\frac{2}{\pi}\left[ \frac{x^2\sin(nx)}{n} - \frac{-2x\cos(nx)}{n^2} + \frac{-2\sin(nx)}{n^3}\right]_0^\pi \\
+    a_n & =\frac{2}{\pi}\left[ \frac{2\pi\cos(n\pi)}{n^2} - 0 \right]                                                \\
+    a_n & =\frac{2}{\pi}\left[ \frac{2\pi(-1)^n}{n^2} \right]                                                        \\
+    a_n & =\boxed{\frac{4(-1)^n}{n^2}}
+\end{align*}
+\begin{gather*}
+    \text{Since $f(x)$ is even, $b_n$ is $\boxed{0}$}
+\end{gather*}
+\begin{align*}
+    f(x) & =a_0+\sum_{n=1}^{\infty}\left( a_n\cos(nx)+b_n\sin(nx) \right)                                 \\
+    f(x) & =\boxed{\frac{\pi^2}{3} + \sum_{n=1}^{\infty}\left( \frac{4(-1)^n}{n^2}\cdot \cos(nx) \right)}
+\end{align*}
+\begin{align*}
+    f(0)             & =0^2=0                                                         \\
+    f(0)             & =\frac{\pi^2}{3}+4\sum_{n=1}^{\infty}\frac{(-1)^n}{n^2}\cos(0) \\
+    0                & =\frac{\pi^2}{3}+4\sum_{n=1}^{\infty}\frac{(-1)^n}{n^2}        \\
+    \frac{-\pi^2}{3} & =4\sum_{n=1}^{\infty}\frac{(-1)^n}{n^2}                        \\
+    \frac{-\pi}{12}  & =\sum_{n=1}^{\infty}\frac{(-1)^n}{n^2}                         \\
+    \frac{\pi}{12}   & =\boxed{\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}}
+\end{align*}
+\end{document}
