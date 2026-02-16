@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+
+\include{src/preamble.tex}
+
+\title{Homework 4}
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item Solve the insulated bar problem:
+          \begin{align*}
+               & \frac{\partial^{2} u}{\partial x^{2}} = \frac{1}{k} \frac{\partial u}{\partial t},    &  & 0<x<a, &  & 0<t  \\
+               & \frac{\partial u}{\partial x}(0,t) = 0, \quad \frac{\partial u}{\partial x}(a,t) = 0, &  &        &  & 0<t, \\
+               & u(x,0) = f(x),                                                                        &  & 0<x<a  &  &
+          \end{align*}
+          Where:
+          \begin{center}
+              $
+                  u(x,0) =
+                  \begin{cases}
+                      \frac{2T_{0}x}{a},     & 0<x<\frac{a}{2} \\[1ex]
+                      \frac{2T_{0}(a-x)}{a}, & \frac{a}{2}<x<a
+                  \end{cases}
+              $
+          \end{center}
+
+    \item Solve the insulated bar problem:
+          \begin{align*}
+               & \frac{\partial^{2} u}{\partial x^{2}} = \frac{1}{k} \frac{\partial u}{\partial t},    &  & 0<x<a, &  & 0<t  \\
+               & \frac{\partial u}{\partial x}(0,t) = 0, \quad \frac{\partial u}{\partial x}(a,t) = 0, &  &        &  & 0<t, \\
+               & u(x,0) = f(x),                                                                        &  & 0<x<a  &  &
+          \end{align*}
+          Where:
+          \begin{center}
+              $
+                  f(x) =
+                  \begin{cases}
+                      T_{1}, & 0<x<\frac{a}{2} \\[1ex]
+                      T_{2}, & \frac{a}{2}<x<a
+                  \end{cases}
+              $
+          \end{center}
+
+    \item Solve the problem:
+          \begin{align*}
+               & \frac{\partial^{2} u}{\partial x^{2}} = \frac{1}{k} \frac{\partial u}{\partial t}, &  & 0<x<a, &  & 0<t  \\
+               & u(0,t) = T_{0}, \quad \frac{\partial u}{\partial x}(a,t) = 0,                      &  &        &  & 0<t, \\
+               & u(x,0) = f(x),                                                                     &  & 0<x<a  &  &
+          \end{align*}
+          Where:
+          \begin{center}
+              $
+                  f(x)=
+                  \begin{cases}
+                      T_{0}, & 0<x<\frac{a}{2} \\[1ex]
+                      T_{1}, & \frac{a}{2}<x<a
+                  \end{cases}
+              $
+          \end{center}
+
+    \item Solve the nonhomogeneous problem:
+          \begin{align*}
+               & \frac{\partial^{2} u}{\partial x^{2}} = \frac{1}{k} \frac{\partial u}{\partial t} - \frac{T}{a^{2}}, &  & 0<x<a, &  & 0<t  \\
+               & u(0,t) = T_{0}, \quad \frac{\partial u}{\partial x}(a,t) = 0,                                        &  &        &  & 0<t, \\
+               & u(x,0) = T_{0},                                                                                      &  & 0<x<a  &  &
+          \end{align*}
+
+    \item Solve the problem:
+          \begin{align*}
+               & \frac{\partial^{2} u}{\partial x^{2}} = \frac{1}{k} \frac{\partial u}{\partial t}, &  & 0<x<a, &  & 0<t  \\
+               & \frac{\partial u}{\partial x}(0,t) = 0, \quad u(a,t) = T_{0},                      &  &        &  & 0<t, \\
+               & u(x,0) = T_{0},                                                                    &  & 0<x<a  &  &
+          \end{align*}
+
+    \item Find the coefficient $b_{m}$ corresponding to:
+          \begin{center}
+              g(x)=1, 0<x<a
+          \end{center}
+\end{enumerate}
+\end{document}
