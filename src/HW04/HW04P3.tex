@@ -1,0 +1,55 @@
+\documentclass[../../HW04.tex]{subfiles}
+
+\begin{document}
+\begin{gather*}
+    u(x,t) = v(x) + w(x,t)
+\end{gather*}
+\begin{align*}
+    v(0)  & = T_{0}                           \\
+    v'(a) & = 0                               \\
+    v(x)  & = C_{1}x + C_{2}                  \\
+    v'(x) & = C_{1} \Rightarrow C_{1} = 0     \\
+    v(0)  & = C_{2} \Rightarrow C_{2} = T_{0} \\
+    v(x)  & = T_{0}
+\end{align*}
+\begin{align*}
+    w(0,t)     & = u(0,t) - v(0) \Rightarrow T_{0} - T_{0} = 0             \\
+    w_{x}(a,t) & = u_{x}(a,t) - v'(a) \Rightarrow 0 - 0 = 0                \\
+    w(x,0)     & = u(x,0) - v(x)  \Rightarrow f(x) - T_{0}                 \\
+    g(x)       & = f(x) - T_{0}  = \begin{cases}
+                                       0,             & 0<x<\frac{a}{2} \\[1ex]
+                                       T_{1} - T_{0}, & \frac{a}{2}<x<a
+                                   \end{cases}
+\end{align*}
+\begin{align*}
+    w(x,t)             & = X(x)T(t)                                        \\
+    X'' + \lambda^{2}X & = 0                                               \\
+    T' + k\lambda^{2}T & = 0                                               \\
+    X(x)               & = A\cos(\lambda x) + B\sin(\lambda x)             \\
+    X(0)               & = 0 \Rightarrow 0 = A(1) + B(0) \Rightarrow A = 0 \\
+    X(x)               & = B\sin(\lambda x)                                \\
+    X'(a)              & = 0 \Rightarrow 0 = B\lambda\cos(\lambda a)       \\
+    \lambda_{n}        & = \frac{\left( 2n-1 \right)\pi}{2a}               \\
+    X_{n}(x)           & = \sin(\lambda_{n}x)                              \\
+    T_{n}(t)           & = e^{-\lambda_{n}^{2}kt}
+\end{align*}
+\begin{align*}
+    w(x,t) & = \sum_{n=1}^{\infty} b_{n}\sin(\lambda_{n}x)e^{-\lambda_{n}^{2}kt}                                                                \\
+    w(x,0) & = \sum_{n=1}^{\infty} b_{n}\sin(\lambda_{n}x)                                                                                      \\
+    b_{n}  & = \frac{2}{a}\int_{0}^{a} w(x,0) \sin(\lambda_{n}x)\,dx                                                                            \\
+    b_{n}  & = \frac{2}{a}\int_{\sfrac{a}{2}}^{a} (T_{1} - T_{0}) \sin(\lambda_{n}x)\,dx                                                        \\
+    b_{n}  & = \frac{2(T_{1} - T_{0}) }{a} \left[ -\frac{1}{\lambda_{n}} \cos(\lambda_{n}x)\right]_{\sfrac{a}{2}}^{a}                           \\
+    b_{n}  & = \frac{2(T_{1} - T_{0}) }{a\lambda_{n}} \left[ \cancelto{0}{-\cos(\lambda_{n}a)} + \cos\left(\frac{\lambda_{n}a}{2}\right)\right] \\
+    b_{n}  & = \frac{2(T_{1} - T_{0}) }{a\lambda_{n}}  \cos\left(\frac{\lambda_{n}a}{2}\right)                                                  \\
+    b_{n}  & = \frac{2(T_{1} - T_{0})}{a \left( \frac{(2n-1)\pi}{2a} \right)} \cos\left( \frac{(2n-1)\pi}{4} \right)                            \\
+    b_{n}  & = \frac{4(T_{1} - T_{0})}{(2n-1)\pi} \cos\left( \frac{(2n-1)\pi}{4} \right)                                                        \\
+\end{align*}
+\begin{gather*}
+    u(x,t) = \boxed{T_{0} + \frac{4(T_{1} - T_{0})}{\pi} \sum_{n=1}^{\infty} \frac{1}{2n-1} \cos\left( \frac{(2n-1)\pi}{4} \right) \sin\left( \frac{(2n-1)\pi x}{2a} \right) e^{-\left( \frac{(2n-1)\pi}{2a} \right)^{2}kt}}
+\end{gather*}
+% \begin{align*}
+%     w(x,t) = \sum_{n=1}^{\infty}b_{n}\sin(\lambda_{n}x)e^{-\lambda_{n}^{2}kt}
+%     b_{n} = \frac{2}{a}\int_{0}^{a}g(x)\sin(\lambda_{n}x)\,dx \\
+%     b_{n} = \frac{2}{a}\int_{\cfrac{a}{2}}^{a}\left( T_{1} - T_{0} \right)\sin\left(  \right)
+% \end{align*}
+\end{document}

@@ -1,0 +1,15 @@
+\ProvidesPackage{hwtitle}[2026/02/17 Custom Homework Title Package]
+
+\makeatletter
+\newcommand{\course}[1]{\def\@course{#1}}
+
+\renewcommand{\maketitle}{
+    \noindent
+    \@author \hfill \@course \newline
+    \@date
+    \begin{center}
+        \large\textbf{\@title}
+    \end{center}
+    \bigskip
+}
+\makeatother

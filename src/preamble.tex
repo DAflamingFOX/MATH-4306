@@ -1,63 +1,74 @@
-% Set the page to be letter paper and have small margins
+% ---------------------------------------------------------
+% PAGE SETUP & GEOMETRY
+% ---------------------------------------------------------
 \usepackage{geometry}
 \geometry{letterpaper, left=15mm, right=15mm, top=15mm, bottom=20mm}
 
-% LuaLaTeX font setup
+% ---------------------------------------------------------
+% CORE MATH PACKAGES (Must load before unicode-math)
+% ---------------------------------------------------------
+\usepackage{amsmath}
+% \usepackage{mathtools} % replaces amsmath
+\usepackage{amsthm}
+\usepackage{cancel}
+\usepackage{diffcoeff}
+\usepackage{xfrac}
+\allowdisplaybreaks[1]
+
+% ---------------------------------------------------------
+% FONTS & TYPOGRAPHY (LuaLaTeX specific)
+% ---------------------------------------------------------
 \usepackage{fontspec}
 \usepackage{unicode-math}
 
 % Text font
 \setmainfont{DejaVu Serif}
-
 % Math font
 \setmathfont{STIX Two Math}
 
-\allowdisplaybreaks[1]
-
-\usepackage{standalone}
-\usepackage{parskip}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{multicol}
+% ---------------------------------------------------------
+% GRAPHICS, TABLES & FIGURES
+% ---------------------------------------------------------
 \usepackage{graphicx}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-\usepackage{cancel}
 \usepackage{xcolor}
-\usepackage[utf8]{inputenc}
 \usepackage{float}
-\usepackage{graphicx}
 \usepackage{pdfpages}
 \usepackage{booktabs}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 
-% \usepackage{hyperref}
-\usepackage{cleveref}
-
+% ---------------------------------------------------------
+% LISTS & TEXT FORMATTING
+% ---------------------------------------------------------
+\usepackage{multicol}
+\usepackage{enumitem}
+\setlist[enumerate, 1]{label=\textbf{\arabic*}.}
+\setlist[enumerate, 2]{label=\textbf{\alph*}.}
 
 \usepackage{titlesec}
 \titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection.}{1em}{}
 \titleformat{\subsection}{\normalfont\normalsize\bfseries\itshape}{\thesubsection}{1em}{}
 
-\usepackage{enumitem}
-\setlist[enumerate, 1]{label=\textbf{\arabic*}.}
-\setlist[enumerate, 2]{label=\textbf{\alph*}.}
+% ---------------------------------------------------------
+% CROSS-REFERENCING (Always load these last)
+% ---------------------------------------------------------
+% \usepackage{hyperref}
+\usepackage{cleveref} % Note: Must be loaded AFTER hyperref
 
+% ---------------------------------------------------------
+% BIBLIOGRAPHY
+% ---------------------------------------------------------
 % \usepackage[style=ieee]{biblatex}
 % \addbibresource{src/refs.bib}
 
-\makeatletter
-\newcommand{\course}[1]{\def\@course{#1}}
+% ---------------------------------------------------------
+% CUSTOM COMMANDS & TITLE SETUP
+% ---------------------------------------------------------
+\usepackage{hwtitle}
 
-\renewcommand{\maketitle}{
-    \noindent
-    \@author \hfill \@course \newline
-    \@date
-    \begin{center}
-        \large\textbf{\@title}
-    \end{center}
-    \bigskip
-}
-
+% ---------------------------------------------------------
+% AUTHOR & DOCUMENT INFO
+% ---------------------------------------------------------
 \author{Jeffrey Morris}
 \course{MATH 4306-010}
 \date{\today}

@@ -1,0 +1,54 @@
+\documentclass[../../HW04.tex]{subfiles}
+
+\begin{document}
+\begin{align*}
+    u(x,t) & = a_{0} + \sum_{n=1}^{\infty} a_{n}\cos(\lambda_{n}x)e^{-\lambda_{n}^{2}kt} \\
+    u(x,0) & = a_{0} + \sum_{n=1}^{\infty} a_{n}\cos(\lambda_{n}x)
+\end{align*}
+\begin{align*}
+    a_{0} & = \frac{1}{a} \int_{0}^{a} f(x)\,dx                                                                                          \\
+    a_{0} & = \frac{1}{a} \left[ \int_{0}^{\frac{a}{2}} \frac{2T_{0}x}{a}\,dx + \int_{\frac{a}{2}}^{a} \frac{2T_{0}(a-x)}{a}\,dx \right] \\
+    a_{0} & = \frac{1}{a} \left[ I_{1} + I_{2} \right]                                                                                   \\
+    I_{1} & = \int_{0}^{\frac{a}{2}} \frac{2T_{0}x}{a}\,dx                                                                               \\
+    I_{1} & = \left. \frac{T_{0}x^{2}}a{} \right|_{0}^{\frac{a}{2}}                                                                      \\
+    I_{1} & = \frac{T_{0}a}{4}                                                                                                           \\
+    I_{2} & = \int_{\frac{a}{2}}^{a} \frac{2T_{0}(a-x)}{a}\,dx                                                                           \\
+    I_{2} & = \int_{\frac{a}{2}}^{0} -\frac{2T_{0}u}{a}\,du                                                                              \\
+    I_{2} & = \int_{0}^{\frac{a}{2}} \frac{2T_{0}u}{a}\,du                                                                               \\
+    I_{2} & = I_{1}                                                                                                                      \\
+    a_{0} & = \frac{1}{a} \left[ \frac{T_{0}a}{4} + \frac{T_{0}a}{4} \right]                                                             \\
+    a_{0} & = \frac{T_{0}}{4} + \frac{T_{0}}{4}                                                                                          \\
+    a_{0} & = \frac{T_{0}}{2}
+\end{align*}
+\begin{align*}
+    a_{n} & = \frac{2}{a} \int_{0}^{a} f(x) \cos \left( \frac{n\pi x}{a}  \right)\,dx                                                                                                                             \\
+    a_{n} & = \frac{2}{a} \left[ \int_{0}^{\frac{a}{2}} \frac{2T_{0}x}{a} \cos \left( \frac{n\pi x}{a} \right)\,dx + \int_{\frac{a}{2}}^{a} \frac{2T_{0}(a-x)}{a} \cos\left( \frac{n\pi x}{a} \right)\,dx \right] \\
+    a_{n} & = \frac{4T_{0}}{a^{2}} \left[ \int_{0}^{\frac{a}{2}} x \cos \left( \frac{n\pi x}{a} \right)\,dx + \int_{\frac{a}{2}}^{a} (a-x) \cos\left( \frac{n\pi x}{a} \right)\,dx \right]                        \\
+    a_{n} & = \frac{4T_{0}}{a^{2}} \left[ I_{1} + I_{2} \right]                                                                                                                                                   \\
+\end{align*}
+\begin{align*}
+    I_{1} & = \int_{0}^{\frac{a}{2}} x \cos \left( \frac{n\pi x}{a} \right)\,dx                                                                                                    \\
+    I_{1} & = \left. \frac{xa}{n\pi} \sin\left( \frac{n\pi x}{a} \right) \right|_{0}^{\frac{a}{2}} - \int_{0}^{\frac{a}{2}} \frac{a}{n\pi} \sin\left( \frac{n\pi x}{a} \right)\,dx \\
+    I_{1} & = \frac{a^{2}}{2n\pi}\sin\left( \frac{n\pi}{2} \right) - \frac{a}{n\pi} \int_{0}^{\frac{a}{2}} \sin\left( \frac{n\pi x}{a} \right)\,dx                                 \\
+    I_{1} & = \frac{a^{2}}{2n\pi}\sin\left( \frac{n\pi}{2} \right) - \frac{a}{n\pi} \left[ -\frac{a}{n\pi}\cos\left( \frac{n\pi x}{a} \right) \right]_{0}^{\frac{a}{2}}            \\
+    I_{1} & = \frac{a^{2}}{2n\pi}\sin\left( \frac{n\pi}{2} \right) + \frac{a^{2}}{n^{2}\pi^{2}} \left[ \cos\left( \frac{n\pi x}{a} \right)  \right]_{0}^{\frac{a}{2}}              \\
+    I_{1} & = \frac{a^{2}}{2n\pi}\sin\left( \frac{n\pi}{2} \right) + \frac{a^{2}}{n^{2}\pi^{2}} \left[ \cos\left( \frac{n\pi}{2} \right) - 1 \right]                               \\
+    I_{1} & = \frac{a^{2}}{n^{2}\pi^{2}} \left[ \frac{n\pi}{2} \sin\left( \frac{n\pi}{2} \right) + \cos\left( \frac{n\pi}{2} \right) - 1 \right]
+\end{align*}
+\begin{align*}
+    I_{2} & = \int_{\frac{a}{2}}^{a} (a-x)\cos\left( \frac{n\pi x}{a} \right)\,dx                                                                                                                                                                                                           \\
+    I_{2} & = \int_{\frac{a}{2}}^{a} a\cos\left( \frac{n\pi x}{a} \right) - x\cos\left( \frac{n\pi x}{a} \right)\,dx                                                                                                                                                                        \\
+    I_{2} & = \int_{\frac{a}{2}}^{a} a\cos\left( \frac{n\pi x}{a} \right)\,dx - \left[ \left. \frac{ax}{n\pi}\sin\left( \frac{n\pi x}{a} \right) \right|_{\frac{a}{2}}^{a} - \int_{\frac{a}{2}}^{a}\frac{a}{n\pi} \sin\left( \frac{n\pi x}{a} \right)\,dx \right]                           \\
+    I_{2} & = \left. \frac{a^{2}}{n\pi}\sin\left( \frac{n\pi x}{a} \right) \right|_{\frac{a}{2}}^{a} - \left. \frac{ax}{n\pi}\sin\left( \frac{n\pi x}{a} \right) \right|_{\frac{a}{2}}^{a} - \left. \frac{a^{2}}{n^{2}\pi^{2}}\cos\left( \frac{n\pi x}{a} \right) \right|_{\frac{a}{2}}^{a} \\
+    I_{2} & = \frac{a}{n\pi} \left[ a \left( -\sin\left( \frac{n\pi}{2} \right) \right) - \left( a-\frac{a}{2} \right)\left( -\sin\left( \frac{n\pi}{2} \right) \right) - \frac{a}{n\pi}\left( \cos(n\pi) - \cos\left( \frac{n\pi}{2} \right) \right) \right]                               \\
+    I_{2} & = \frac{a}{n\pi} \left[ -a\sin\left( \frac{n\pi}{2} \right) + \frac{a}{2}\sin\left( \frac{n\pi}{2} \right) - \frac{a}{n\pi}\cos(n\pi) + \frac{a}{n\pi}\cos\left( \frac{n\pi}{2} \right) \right]                                                                                 \\
+    I_{2} & = \frac{a^{2}}{n^{2}\pi^{2}} \left[ -\frac{n\pi}{2}\sin\left( \frac{n\pi}{2} \right) - \cos(n\pi) + \cos\left( \frac{n\pi}{2} \right) \right]
+\end{align*}
+\begin{align*}
+    a_{n} & = \frac{4T_{0}}{a^{2}} \left[ \frac{a^{2}}{n^{2}\pi^{2}} \left[ \frac{n\pi}{2} \sin\left( \frac{n\pi}{2} \right) + \cos\left( \frac{n\pi}{2} \right) - 1 \right] + \frac{a^{2}}{n^{2}\pi^{2}} \left[ -\frac{n\pi}{2}\sin\left( \frac{n\pi}{2} \right) - \cos(n\pi) + \cos\left( \frac{n\pi}{2} \right) \right] \right] \\
+    a_{n} & = \frac{4T_{0}}{n^{2}\pi^{2}} \left[ 2\cos\left( \frac{n\pi}{2} \right) - \cos\left( n\pi \right) - 1 \right]
+\end{align*}
+\begin{gather*}
+    u(x,t) = \boxed{\frac{T_{0}}{2} + \frac{4T_{0}}{\pi^{2}} \sum_{n=1}^{\infty} \frac{1}{n^{2}} \left[ 2\cos\left( \frac{n\pi}{2} \right) - \cos\left( n\pi \right) - 1 \right] \cos\left( \frac{n\pi x}{a} \right) e^{-\left(\frac{n\pi}{a}\right)^{2}kt}}
+\end{gather*}
+\end{document}

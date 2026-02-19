@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+
+\usepackage{subfiles}
+\input{src/preamble.tex}
+
+\title{Homework 4}
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item Solve the insulated bar problem:
+          \begin{align*}
+               & \diffp[2]{u}{x} = \frac{1}{k} \diffp{u}{t},         &  & 0<x<a, &  & 0<t  \\
+               & \diffp{u}{x}(0,t) = 0, \quad \diffp{u}{x}(a,t) = 0, &  &        &  & 0<t, \\
+               & u(x,0) = f(x),                                      &  & 0<x<a  &  &
+          \end{align*}
+          Where:
+          \begin{center}
+              $
+                  u(x,0) =
+                  \begin{cases}
+                      \frac{2T_{0}x}{a},     & 0<x<\frac{a}{2} \\[1ex]
+                      \frac{2T_{0}(a-x)}{a}, & \frac{a}{2}<x<a
+                  \end{cases}
+              $
+          \end{center}
+
+          \subfile{src/HW04/HW04P1.tex}
+
+    \item Solve the insulated bar problem:
+          \begin{align*}
+               & \diffp[2]{u}{x} = \frac{1}{k} \diffp{u}{t},         &  & 0<x<a, &  & 0<t  \\
+               & \diffp{u}{x}(0,t) = 0, \quad \diffp{u}{x}(a,t) = 0, &  &        &  & 0<t, \\
+               & u(x,0) = f(x),                                      &  & 0<x<a  &  &
+          \end{align*}
+          Where:
+          \begin{center}
+              $
+                  f(x) =
+                  \begin{cases}
+                      T_{1}, & 0<x<\frac{a}{2} \\[1ex]
+                      T_{2}, & \frac{a}{2}<x<a
+                  \end{cases}
+              $
+          \end{center}
+
+          \subfile{src/HW04/HW04P2.tex}
+
+    \item Solve the problem:
+          \begin{align*}
+               & \diffp[2]{u}{x} = \frac{1}{k} \diffp{u}{t},  &  & 0<x<a, &  & 0<t  \\
+               & u(0,t) = T_{0}, \quad \diffp{u}{x}(a,t) = 0, &  &        &  & 0<t, \\
+               & u(x,0) = f(x),                               &  & 0<x<a  &  &
+          \end{align*}
+          Where:
+          \begin{center}
+              $
+                  f(x)=
+                  \begin{cases}
+                      T_{0}, & 0<x<\frac{a}{2} \\[1ex]
+                      T_{1}, & \frac{a}{2}<x<a
+                  \end{cases}
+              $
+          \end{center}
+          \subfile{src/HW04/HW04P3.tex}
+
+    \item Solve the nonhomogeneous problem:
+          \begin{align*}
+               & \diffp[2]{u}{x} = \frac{1}{k} \diffp{u}{t} - \frac{T}{a^{2}}, &  & 0<x<a, &  & 0<t  \\
+               & u(0,t) = T_{0}, \quad \diffp{u}{x}(a,t) = 0,                  &  &        &  & 0<t, \\
+               & u(x,0) = T_{0},                                               &  & 0<x<a  &  &
+          \end{align*}
+          \subfile{src/HW04/HW04P4.tex}
+
+    \item Solve the problem:
+          \begin{align*}
+               & \diffp[2]{u}{x} = \frac{1}{k} \diffp{u}{t},  &  & 0<x<a, &  & 0<t  \\
+               & \diffp{u}{x}(0,t) = 0, \quad u(a,t) = T_{0}, &  &        &  & 0<t, \\
+               & u(x,0) = T_{1},                              &  & 0<x<a  &  &
+          \end{align*}
+          \subfile{src/HW04/HW04P5.tex}
+
+    \item Find the coefficient $b_{m}$ corresponding to:
+          \begin{center}
+              g(x)=1, 0<x<a
+          \end{center}
+          \subfile{src/HW04/HW04P6.tex}
+\end{enumerate}
+\end{document}

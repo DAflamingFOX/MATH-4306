@@ -1,11 +1,12 @@
-SRC_DIR := src
+# SRC_DIR := src
 BUILD_DIR := build
 ARTIFACT_DIR := artifacts
 
 # Get all .tex files in source directory.
-TEX_FILES := $(filter-out $(SRC_DIR)/preamble.tex, $(wildcard $(SRC_DIR)/*.tex))
+# TEX_FILES := $(filter-out $(SRC_DIR)/preamble.tex, $(wildcard $(SRC_DIR)/*.tex))
+TEX_FILES := $(wildcard *.tex)
 # Generate all .pdf files based on .tex files
-PDF_FILES := $(patsubst $(SRC_DIR)/%.tex, $(BUILD_DIR)/%.pdf, $(TEX_FILES))
+PDF_FILES := $(patsubst %.tex, $(BUILD_DIR)/%.pdf, $(TEX_FILES))
 
 LATEXMK := latexmk -pdflua -interaction=nonstopmode -nobibtex -outdir=$(BUILD_DIR) -out2dir=$(ARTIFACT_DIR)
 
@@ -18,7 +19,7 @@ $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
 # Compile the LaTeX document.
-$(BUILD_DIR)/%.pdf: $(SRC_DIR)/%.tex | $(BUILD_DIR)
+$(BUILD_DIR)/%.pdf: %.tex | $(BUILD_DIR)
 	$(LATEXMK) $<
 
 # Clean all build files

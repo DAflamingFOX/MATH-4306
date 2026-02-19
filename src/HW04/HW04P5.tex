@@ -1,0 +1,37 @@
+\documentclass[../../HW04.tex]{subfiles}
+
+\begin{document}
+\begin{gather*}
+    u(x,t)=v(x)+w(x,t)
+\end{gather*}
+\begin{align*}
+    v''(x) & = 0                               \\
+    v(x)   & = C_{1}x + C_{2}                  \\
+    v'(0)  & = 0 \Rightarrow C_{1} = 0         \\
+    v(a)   & = T_{0} \Rightarrow C_{2} = T_{0} \\
+    v(x)   & = T_{0}
+\end{align*}
+\begin{align*}
+    w(x,t)     & = u(x,t) - v(x)                                                   \\
+    w_{x}(0,t) & = u_{x}(0,t) - v'(0) \Rightarrow 0-0 \Rightarrow w_{x}(0,t) = 0   \\
+    w(a,t)     & = u(a,t) - v(a0) \Rightarrow T_{0} - T_{0} \Rightarrow w(a,t) = 0 \\
+    w(x,0)     & = u(x,0) - v(x) \Rightarrow w(x,0) = T_{1} - T_{0}
+\end{align*}
+\begin{align*}
+    \lambda_{n} & = \frac{(2n-1) \pi}{2a}  \\
+    X_{n}       & = \cos(\lambda_{n}x)     \\
+    T_{n}       & = e^{-\lambda_{n}^{2}kt}
+\end{align*}
+\begin{align*}
+    w(x,t) & = \sum_{n=1}^{\infty} a_{n} \cos \left( \lambda_{n}x \right) e^{-\lambda_{n}^{2}kt}                                      \\
+    w(x,0) & = \sum_{n=1}^{\infty} a_{n} \cos \left( \lambda_{n}x \right)                                                             \\
+    a_{n}  & = \frac{2}{a} \int_{0}^{a} \left( T_{1} - T_{0} \right) \cos \left( \lambda_{n}x \right)                                 \\
+    a_{n}  & = \frac{2\left( T_{1} - T_{0} \right) }{a} \left[ \frac{1}{\lambda_{n}} \sin \left( \lambda_{n}x \right) \right]_{0}^{a} \\
+    a_{n}  & = \frac{2\left( T_{1} - T_{0} \right) }{a} \sin(\lambda_{n}a)                                                            \\
+    a_{n}  & = \frac{2\left( T_{1} - T_{0} \right) }{a \left( \frac{(2n-1)\pi}{2a} \right)} (-1)^{n+1}                                \\
+    a_{n}  & = \frac{4\left( T_{1} - T_{0} \right) }{(2n-1)\pi} (-1)^{n+1}
+\end{align*}
+\begin{gather*}
+    u(x,t) = T_{0} + \frac{4\left( T_{1} - T_{0} \right) }{\pi} \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{2n-1} \cos\left( \frac{(2n-1)\pi x}{2a} \right) e^{-\left( \frac{(2n-1)\pi}{2a} \right)^{2}kt}
+\end{gather*}
+\end{document}

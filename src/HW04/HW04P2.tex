@@ -1,0 +1,26 @@
+\documentclass[../../HW04.tex]{subfiles}
+
+\begin{document}
+\begin{align*}
+    u(x,t) & = a_{0} + \sum_{n=1}^{\infty} a_{n}\cos(\lambda_{n}x)e^{-\lambda_{n}^{2}kt} \\
+    u(x,0) & = a_{0} + \sum_{n=1}^{\infty} a_{n}\cos(\lambda_{n}x)
+\end{align*}
+\begin{align*}
+    a_{0} & = \frac{1}{a} \int_{0}^{a} f(x)\,dx                                                                \\
+    a_{0} & = \frac{1}{a} \left[ \int_{0}^{\sfrac{a}{2}} T_{1}\,dx + \int_{\sfrac{a}{2}}^{2} T_{2}\,dx \right] \\
+    a_{0} & = \frac{1}{a} \left[ \frac{T_{1}a}{2} + \left( T_{2} - \frac{T_{2}a}{2} \right) \right]            \\
+    a_{0} & = \frac{T_{1}}{2} + T_{2} - \frac{T_{2}}{2}                                                        \\
+    a_{0} & = \frac{T_{1}}{2} + \frac{T_{2}}{2}
+\end{align*}
+\begin{align*}
+    a_{n} & = \frac{2}{a} \int_{0}^{a} f(x) \cos \left( \frac{n\pi x}{a}  \right)\,dx                                                                                                                                       \\
+    a_{n} & = \frac{2}{a} \left[ \int_{0}^{\sfrac{a}{2}} T_{1}\cos\left( \frac{n\pi x}{a} \right)\,dx + \int_{\sfrac{a}{2}}^{a} T_{2}\cos\left( \frac{n\pi x}{a} \right)\,dx \right]                                        \\
+    a_{n} & = \frac{2}{a} \left[ \left. \frac{T_{1}a}{n\pi}\sin\left( \frac{n\pi x}{a} \right) \right|_{0}^{\sfrac{a}{2}} + \left. \frac{T_{2}a}{n\pi}\sin\left( \frac{n\pi x}{a} \right) \right|_{\sfrac{a}{2}}^{a}\right] \\
+    a_{n} & = \frac{2}{a} \left[ \frac{T_{1}a}{n\pi}\sin\left( \frac{n\pi}{2} \right) + \frac{T_{2}a}{n\pi} \left( \sin(n\pi) - \sin\left( \frac{n\pi}{2} \right) \right) \right] \\
+    a_{n} & = \frac{2}{n\pi} \left[ T_{1}\sin\left( \frac{n\pi}{2} \right) + T_{2}\sin(n\pi) - T_{2}\sin\left( \frac{n\pi}{2} \right) \right] \\
+    a_{n} & = \frac{2}{n\pi} \left[ \sin\left(\frac{n\pi}{2}\right) \left( T_{1} - T_{2} \right) + \sin(n\pi)(T_{2}) \right]
+\end{align*}
+\begin{gather*}
+    u(x,t) = \boxed{\frac{T_{1}}{2} + \frac{T_{2}}{2} + \frac{2}{\pi} \sum_{n=1}^{\infty} \frac{1}{n} \left[ \sin\left(\frac{n\pi}{2}\right) \left( T_{1} - T_{2} \right)\right] \cos\left( \frac{n\pi x}{a} \right) e^{-\left(\frac{n\pi}{a}\right)^{2}kt}}
+\end{gather*}
+\end{document}
