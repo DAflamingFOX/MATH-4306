@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 
-\include{src/preamble.tex}
+\usepackage{subfiles}
+\input{src/preamble.tex}
 
 \title{Homework 2}
 
@@ -10,7 +11,7 @@
 
 \begin{enumerate}
     \item Given the function $f(x)=x^2$.
-          \input{src/HW02/HW02P1.tex}
+          \subfile{src/HW02/HW02P1.tex}
 
     \item Given the function:
           \begin{center}
@@ -22,12 +23,12 @@
                   \end{cases}
               $
           \end{center}
-          \input{src/HW02/HW02P2.tex}
+          \subfile{src/HW02/HW02P2.tex}
 
     \item Sketch the even and odd extensions of each of the following functions, and find the Fourier cosine and sine integrals for $f$. Each function is given in the interval $0<x<\infty$.
           \begin{enumerate}
               \item $f(x)=e^{-x}$
-                    \input{src/HW02/HW02P3a.tex}
+                    \subfile{src/HW02/HW02P3a.tex}
               \item $
                         f(x)=
                         \begin{cases}
@@ -35,7 +36,7 @@
                             0, & 1<x
                         \end{cases}
                     $
-                    \input{src/HW02/HW02P3b.tex}
+                    \subfile{src/HW02/HW02P3b.tex}
           \end{enumerate}
     \item Find the Fourier integral representation of the function $f_t(x)$ given below. This is sometimes called a "window" because it is "open" for $t-x < x < t+h$.
           \begin{center}
@@ -47,7 +48,7 @@
                   \end{cases}
               $
           \end{center}
-          \input{src/HW02/HW02P4.tex}
+          \subfile{src/HW02/HW02P4.tex}
     \item Find the Fourier integral representation of each of these functions:
           \begin{enumerate}
               \addtocounter{enumii}{2}
@@ -58,7 +59,7 @@
                             0,                      & \text{otherwise}
                         \end{cases}
                     $
-                    \input{src/HW02/HW02P5c.tex}
+                    \subfile{src/HW02/HW02P5c.tex}
           \end{enumerate}
 \end{enumerate}
 
