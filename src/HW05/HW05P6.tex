@@ -1,0 +1,14 @@
+\documentclass[../../HW05]{subfiles}
+
+\begin{document}
+\begin{align*}
+    A(\lambda) & = \frac{1}{\pi} \int_{-\infty}^{\infty} f(x) \cos(\lambda x)\,dx                                                                                                                            \\
+    A(\lambda) & = \frac{2T_{0}}{\pi} \int_{0}^{\infty} e^{\sfrac{-x}{a}}\cos(\lambda x)\, dx                                                                                                                \\
+    A(\lambda) & = \frac{2T_{0}}{\pi} \left[ \frac{e^{\sfrac{-x}{a}}}{\lambda^{2} + \left( \frac{1}{a} \right)^{2}} \left( \lambda \sin(\lambda x) - \frac{1}{a} \cos(\lambda x) \right)\right]_{0}^{\infty} \\
+    A(\lambda) & = \frac{2T_{0}}{\pi} \left[ 0 - \frac{\frac{-1}{a}}{\lambda^{2} + \left( \frac{1}{a} \right)^{2}} \right]                                                                                   \\
+    A(\lambda) & = \frac{2T_{0}}{\pi} \cdot \frac{\frac{1}{a}}{\lambda^{2} + \left( \frac{1}{a} \right)^{2}}                                                                                                 \\
+    A(\lambda) & = \frac{2T_{0}a}{\pi\left( \lambda^{2}a^{2} + 1 \right)}                                                                                                                                    \\
+    B(\lambda) & = 0, \quad \text{because $f(x)$ is even.}                                                                                                                                                   \\
+    u(x,t)     & = \boxed{\int_{0}^{\infty} \frac{2T_{0}a}{\pi\left( \lambda^{2}a^{2} + 1 \right)} \cos(\lambda x) e^{-\lambda^{2}kt}\,d\lambda}
+\end{align*}
+\end{document}

@@ -1,0 +1,18 @@
+\documentclass[../../HW05]{subfiles}
+
+\begin{document}
+\begin{align*}
+    u(x,t)     & = \int_{0}^{\infty} \left[ A(\lambda)\cos(\lambda x) + B(\lambda)\sin(\lambda x) \right] e^{-\lambda^{2}kt}\,d\lambda                                                                         \\
+    u(x,0)     & = \int_{0}^{\infty} \left[ A(\lambda)\cos(\lambda x) + B(\lambda)\sin(\lambda x) \right]\,d\lambda                                                                                            \\
+    A(\lambda) & = \frac{1}{\pi} \int_{-\infty}^{\infty} f(x) \cos(\lambda x)\,dx                                                                                                                              \\
+    A(\lambda) & = \frac{2T_{0}}{\pi} \int_{0}^{a} (a-x) \cos(\lambda x)\,dx                                                                                                                                   \\
+    A(\lambda) & = \frac{2T_{0}}{\pi} \left[ \int_{0}^{a} a\cos(\lambda x)\,dx - \int_{0}^{a} x\cos(\lambda x)\,dx \right]                                                                                     \\
+    A(\lambda) & = \frac{2T_{0}}{\pi} \left[ a \left( \frac{\sin(\lambda x)}{\lambda}  \right)_{0}^{a} - \left( \frac{x\sin(\lambda x)}{\lambda} + \frac{\cos(\lambda x)}{\lambda^{2}} \right)_{0}^{a} \right] \\
+    A(\lambda) & = \frac{2T_{0}}{\pi} \left[ \frac{a\sin(a\lambda)}{\lambda} - \frac{a\sin(a\lambda)}{\lambda} - \left( \frac{\cos(a\lambda)}{\lambda^{2}} - \frac{1}{\lambda^{2}} \right) \right]             \\
+    A(\lambda) & = \frac{2T_{0}}{\pi} \left[ \frac{-\cos(a\lambda)}{\lambda^{2}} + \frac{1}{\lambda^{2}} \right]                                                                                                \\
+    A(\lambda) & = \frac{2T_{0}}{\pi} \cdot \frac{1 - \cos(a\lambda)}{\lambda^{2}}                                                                                                                             \\
+    A(\lambda) & = \frac{2T_{0}\left( 1 - \cos(a\lambda) \right)}{\pi \lambda^{2}}                                                                                                                             \\
+    B(\lambda) & = 0, \quad \text{because $f(x)$ is even.}                                                                                                                                                     \\
+    u(x,t)     & = \boxed{\int_{0}^{\infty} \frac{2T_{0}\left( 1- \cos(a\lambda) \right)}{\pi \lambda^{2}} \cos(\lambda x) e^{-\lambda^{2}kt}\,d\lambda}
+\end{align*}
+\end{document}

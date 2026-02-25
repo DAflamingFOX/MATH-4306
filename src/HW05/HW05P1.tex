@@ -1,0 +1,13 @@
+\documentclass[../../HW05]{subfiles}
+
+\begin{document}
+\begin{align*}
+    u(x,t)     & = \int_{0}^{\infty} B(\lambda) \sin(\lambda x) e^{-\lambda^{2}kt}\,d\lambda                                                           \\
+    u(x,0)     & = \int_{0}^{\infty} B(\lambda) \sin(\lambda x)\,d\lambda                                                                              \\
+    B(\lambda) & = \frac{2}{\pi} \int_{0}^{\infty} f(x) \sin(\lambda x)\,dx                                                                            \\
+    B(\lambda) & = \frac{2T}{\pi} \int_{a}^{b} \sin(\lambda x)\,dx                                                                                     \\
+    B(\lambda) & = \frac{2T}{\pi} \left[ \frac{-1}{\lambda} \cos(\lambda x) \right]_{a}^{b}                                                            \\
+    B(\lambda) & = \frac{2T}{\pi} \left[ \cos(a\lambda) - \cos(b\lambda) \right]                                                                       \\
+    u(x,t)     & = \boxed{\int_{0}^{\infty} \frac{2T}{\pi} \left[ \cos(a\lambda) - \cos(b\lambda) \right]\sin(\lambda x) e^{-\lambda^{2}kt}\,d\lambda}
+\end{align*}
+\end{document}

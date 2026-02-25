@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+
+\usepackage{subfiles}
+\input{src/preamble.tex}
+
+\begin{document}
+\begin{enumerate}
+    \item Find the solution of:
+          \begin{align*}
+               & \diffp[2]{u}{x} = \frac{1}{k} \diffp{u}{t}              &  & 0<x<\infty &  & 0<t \\
+               & u(0,t) = 0,                                             &  &            &  & 0<t \\
+               & u(x,t) \quad \text{bounded as} \quad x\rightarrow\infty                          \\
+               & u(x,0) = f(x)                                           &  & 0<x
+          \end{align*}
+          Where:
+          \begin{gather*}
+              f(x)=\begin{cases}
+                  0, & 0<x<a \\
+                  T, & a<x<b \\
+                  0, & b<x
+              \end{cases}
+          \end{gather*} \label{Ex:1}
+          \subfile{src/HW05/HW05P1.tex}
+    \item \begin{align*}
+               & \diffp[2]{u}{x} = \frac{1}{k} \diffp{u}{t}              &  & 0<x<\infty &  & 0<t \\
+               & u(0,t) = 0,                                             &  &            &  & 0<t \\
+               & u(x,t) \quad \text{bounded as} \quad x\rightarrow\infty                          \\
+               & u(x,0) = f(x)                                           &  & 0<x
+          \end{align*}
+          Where:
+          \begin{gather*}
+              f(x) = T_{0}e^{-\alpha x}
+          \end{gather*}
+          \subfile{src/HW05/HW05P2.tex}
+    \item Find a formula for the solution of the problem:
+          \begin{align*}
+               & \diffp[2]{u}{x} = \frac{1}{k} \diffp{u}{t} &  & 0<x &  & 0<t \\
+               & \diffp{u}{x}(0,t) = 0,                     &  &     &  & 0<t \\
+               & u(x,0) = f(x)                              &  & 0<x
+          \end{align*} \label{Ex:3}
+          \subfile{src/HW05/HW05P3.tex}
+    \item Determine the solution of \cref{Ex:3} if $f(x)$ is the function given in \cref{Ex:1}
+          \subfile{src/HW05/HW05P4.tex}
+    \item Find the solution of:
+          \begin{align*}
+               & \diffp[2]{u}{x}=\frac{1}{k} \diffp{u}{t}                                  &  & -\infty<x<\infty &  & 0<t \\
+               & u(x,0)                                                                    &  & -\infty<x<\infty          \\
+               & \left| u(x,t) \right| \quad \text{bounded as}\quad x\rightarrow \pm\infty
+          \end{align*}
+          Where:
+          \begin{gather*}
+              f(x)=\begin{cases}
+                  T_{0}(a-\left| x \right|) & -a<x<a           \\
+                  0                         & \text{otherwise}
+              \end{cases}
+          \end{gather*} \label{Ex:5}
+          \subfile{src/HW05/HW05P5.tex}
+    \item Same as \cref{Ex:5}, with $f(x)=T_{0}e^{-\left| \frac{x}{a} \right|}$
+    \subfile{src/HW05//HW05P6.tex}
+\end{enumerate}
+\end{document}

@@ -1,0 +1,11 @@
+\documentclass[../../HW05]{subfiles}
+
+\begin{document}
+\begin{align*}
+    A(\lambda) & = \frac{2}{\pi} \int_{a}^{b} T\cos(\lambda x)\,dx                                                                                        \\
+    A(\lambda) & = \frac{2T}{\pi} \int_{a}^{b} \cos(\lambda x)\,dx                                                                                        \\
+    A(\lambda) & = \frac{2T}{\pi} \left[ \sin(\lambda x) \right]_{a}^{b}                                                                                  \\
+    A(\lambda) & = \frac{2T}{\pi} \left[ \sin(b\lambda) - \sin(a\lambda) \right]                                                                          \\
+    u(x,t)     & = \boxed{\int_{0}^{\infty} \frac{2T}{\pi} \left[ \sin(b\lambda) - \sin(a\lambda) \right] \cos(\lambda x) e^{-\lambda^{2}kt} \, d\lambda}
+\end{align*}
+\end{document}

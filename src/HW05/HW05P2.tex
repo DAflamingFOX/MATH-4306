@@ -1,0 +1,12 @@
+\documentclass[../../HW05]{subfiles}
+
+\begin{document}
+\begin{align*}
+    B(\lambda) & = \frac{2}{\pi} \int_{0}^{\infty} T_{0}e^{-ax}\sin(\lambda x)\, dx                                                                             \\
+    B(\lambda) & = \frac{2T_{0}}{\pi} \int_{0}^{\infty} e^{-ax} \sin(\lambda x)\,dx                                                                             \\
+    B(\lambda) & = \frac{2T_{0}}{\pi} \left[ \frac{e^{-ax}}{a^{2} + \lambda^{2}} \left( -a\sin(\lambda x) - \lambda\cos(\lambda x) \right) \right]_{0}^{\infty} \\
+    B(\lambda) & = \frac{2T_{0}}{\pi} \left[ 0 - \frac{-\lambda}{a^{2} + \lambda^{2}} \right]                                                                   \\
+    B(\lambda) & = \frac{2T_{0}\lambda}{\pi\left( a^{2} + \lambda^{2} \right)}                                                                                  \\
+    u(x,t)     & = \boxed{\int_{0}^{\infty}  \frac{2T_{0}\lambda}{\pi\left( a^{2} + \lambda^{2} \right)} \sin(\lambda x)e^{-\lambda^{2}kt}\,d\lambda}
+\end{align*}
+\end{document}
