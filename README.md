@@ -10,7 +10,7 @@ There are two ways to build this project:
 
 ### TeX Live
 
-For this method, we will require a [TeX Live](https://www.tug.org/texlive/) along with all the required packages used by the TeX sources (see `setup_fedora.sh` for a minimal install).
+For this method, we will require a [TeX Live](https://www.tug.org/texlive/) along with all the required packages used by the TeX sources.
 
 The use of [make](https://www.gnu.org/software/make/) is optional, but the `Makefile` is configured to build all TeX sources for you by simply running `make`, this will output all the PDF files into the `artifacts/` directory.
 
@@ -20,7 +20,7 @@ You can also use the [LaTeX Workshop Extension](https://marketplace.visualstudio
 
 ### Docker
 
-Since I wanted this project to be able to build itself via GitHub Actions, that means you can also use this method, you can even do so locally without even commiting your changes.
+This project is also built using GitHub Actions, which you can run locally using act and docker.
 
 This method requires the following tools to be installed:
 - [act](https://nektosact.com/introduction.html)
