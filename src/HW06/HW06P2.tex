@@ -1,0 +1,26 @@
+\documentclass[../../HW06.tex]{subfiles}
+
+\begin{document}
+\begin{align*}
+    u(x,t) & =\sum_{n=1}^{\infty}\sin(\lambda_{n}x)\left[ a_{n}\cos(\lambda_{n}ct) + b_{n}\sin(\lambda_{n}ct) \right] \\
+    a_{n}  & = \frac{2}{a} \int_{0}^{a} f(x) \sin\left(\frac{n\pi x}{a}\right)\,dx                                    \\
+    b_{n}  & = \frac{2}{n\pi c} \int_{0}^{a} g(x) \sin\left( \frac{n\pi x}{a} \right)\,dx
+\end{align*}
+\begin{align*}
+    a_{n}                       & = \frac{2}{a}\int_{0}^{a} \sin\left( \frac{\pi x}{a} \right)\sin\left( \frac{n \pi x}{a} \right)\,dx                                                          \\
+    a_{n}                       & = \frac{1}{a} \int_{0}^{a} \cos\left( (1-n) \frac{\pi x}{a} \right) - \cos\left( (1+n) \frac{\pi x}{a} \right)\,dx                                            \\
+    a_{n}                       & = \frac{1}{a} \left[ \frac{a}{\pi(1-n)} \sin\left( (1-n) \frac{\pi x}{a} \right) - \frac{a}{\pi(1+n)}\sin\left( (1+n) \frac{\pi x}{a} \right) \right]_{0}^{a} \\
+    a_{n}                       & = 0                                                                                                                                                           \\
+    \text{if $n=1$:}\quad a_{n} & = \frac{1}{a} \int_{0}^{a} \cos(0) - \cos\left( \frac{n\pi x}{a} \right)\,dx                                                                                  \\
+    a_{n}                       & = \frac{1}{a} \left[ x = \frac{a\pi}{2}\sin\left( \frac{2\pi x}{a} \right) \right]_{0}^{a}                                                                    \\
+    a_{n}                       & = 1
+\end{align*}
+\begin{align*}
+    b_{n} & = 0
+\end{align*}
+\begin{center}
+    \[
+        u(x,t) = \boxed{\cos\left(\frac{\pi ct}{a}\right)\sin\left( \frac{\pi x}{a} \right)}
+    \]
+\end{center}
+\end{document}

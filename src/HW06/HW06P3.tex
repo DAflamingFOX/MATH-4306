@@ -1,0 +1,44 @@
+\documentclass[../../HW06.tex]{subfiles}
+
+\setlist[enumerate, 1]{label=\textbf{\alph*}.}
+
+\begin{document}
+\begin{gather*}
+    u(x,t) =p(x,t)-p_{0} \\
+    \diffp[2]{u}{x} = \diffp[2]{p}{x} \quad\text{and}\quad \diffp[2]{u}{t} = \diffp[2]{p}{t} \\
+    \diffp[2]{u}{x} = \frac{1}{c^{2}} \diffp[2]{u}{t} \\
+    \text{Assume: } u=XT \\
+    X''T = \frac{1}{c^{2}}XT'' \\
+    \frac{X''}{X} = \frac{T''}{c^{2}T} = -\lambda^{2} \\
+    X'' + \lambda^{2}X = 0
+\end{gather*}
+\begin{enumerate}
+    \item \begin{align*}
+              p(0,t)                 & =p_{0} \Rightarrow u(0,t)=0 \Rightarrow X(0) = 0                                     \\
+              p(a,t)                 & =p_{0} \Rightarrow u(a,t)=0 \Rightarrow X(a) = 0                                     \\
+              X(x)                   & =A\cos(\lambda x) + B\sin(\lambda x)                                                 \\
+              X(0)                   & = A \Rightarrow A = 0                                                                \\
+              X(a)                   & = B\sin(\lambda a)                                                                   \\
+              B                      & \ne 0                                                                                \\
+              \sin(\lambda a)        & = 0                                                                                  \\
+              \lambda_{n}            & = \frac{n \pi}{a}                                                                    \\
+              \\
+              \text{eigenvalue: }    & \lambda_{n}^{2} = \left(  \frac{n\pi}{a} \right)^{2}, \text{for } n = 1, 2, 3, \dots \\
+              \text{eigenfunction: } & X_{n}(x) = \sin(\lambda_{n}x)
+          \end{align*}
+    \item \begin{align*}
+              p(0,t)            & = p_{0} \Rightarrow u(0,t)=0 \Rightarrow X(0)=0           \\
+              \diffp{p}{x}(a,t) & = 0 \Rightarrow \diffp{u}{x}(a,t) = 0 \Rightarrow X'(a)=0 \\
+              X(x)              & = A\cos(\lambda x) + B\sin(\lambda x)                     \\
+              X(0)              & = A \Rightarrow A = 0                                     \\
+              X(a)              & = B\sin(\lambda x)                                        \\
+              X'(a)             & = \frac{B}{\lambda} \cos(\lambda a)                       \\
+              B                 & \ne 0                                                     \\
+              \cos(\lambda a)   & = 0                                                       \\
+              \lambda_{n}       & = \frac{(2n-1)\pi}{2a} \\
+              \\
+              \text{eigenvalue: }    & \lambda_{n}^{2} = \left(  \frac{(2n-1)\pi}{2a} \right)^{2}, \text{for } n = 1, 2, 3, \dots \\
+              \text{eigenfunction: } & X_{n}(x) = \sin(\lambda_{n}x)
+          \end{align*}
+\end{enumerate}
+\end{document}

@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+
+\usepackage{subfiles}
+\input{src/preamble.tex}
+
+\title{Homework 6}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item Solve the vibrating string problem:
+          \begin{align*}
+               & \diffp[2]{u}{x} = \frac{1}{c^{2}} \diffp[2]{u}{t} &  & 0<x<a &  & 0<t \\
+               & u(0,t) = 0, \quad u(a,t) = 0                      &  &       &  & 0<t \\
+               & u(x,0) = f(x)                                     &  & 0<x<a          \\
+               & \diffp{u}{t}(x,0) = g(x)                          &  & 0<x<a
+          \end{align*}
+          Where the initial conditions are given as:
+          \begin{align*}
+              f(x) & = \begin{cases}
+                           U_{0}, & 0<x<\sfrac{a}{2} \\
+                           0,     & \sfrac{a}{2}<x<a
+                       \end{cases}          \\
+              g(x) & = 0                          & 0<x<a
+          \end{align*}
+          \subfile{src/HW06/HW06P1.tex}
+    \item Solve the vibrating string problem:
+          \begin{align*}
+               & \diffp[2]{u}{x} = \frac{1}{c^{2}} \diffp[2]{u}{t} &  & 0<x<a &  & 0<t \\
+               & u(0,t) = 0, \quad u(a,t) = 0                      &  &       &  & 0<t \\
+               & u(x,0) = f(x)                                     &  & 0<x<a          \\
+               & \diffp{u}{t}(x,0) = g(x)                          &  & 0<x<a
+          \end{align*}
+          Where the initial conditions are given as:
+          \begin{align*}
+              f(x) & = \sin\left( \frac{\pi x}{a} \right) & 0<x<a \\
+              g(x) & = 0                                  & 0<x<a
+          \end{align*}
+          \subfile{src/HW06/HW06P2.tex}
+    \item The pressure of the air in an organ pipe satisfies the equation:
+          \begin{align*}
+               & \diffp[2]{p}{x} = \frac{1}{c^{2}} \diffp[2]{p}{t} &  & 0<x<a &  & 0<t
+          \end{align*}
+          with the boundary conditions ($p_{0}$ is atmospheric pressure):
+          \begin{enumerate}
+              \item $p(0,t) = p_{0}, \quad p(a,t)=p_{0}$ if the pipe is open, or
+              \item $p(0,t) = p_{0}, \quad \diffp{p}{x}(a,t)=0$ if the pipe is closed at $x=a$.
+          \end{enumerate}
+          Find the eigenvalues and eigenfunctions associated with the wave equation for each of these sets of boundary conditions.
+          \subfile{src/HW06/HW06P3.tex}
+    \item If a string vibrates in a medium that resists the motion, the problem for the displacement of the string is:
+          \begin{align*}
+               & \diffp[2]{u}{x} = \frac{1}{c^{2}}\diffp[2]{u}{t} + k\diffp{u}{t} &  & 0<x<a &  & 0<t \\
+               & u(0,t)=0, \quad u(a,t)=0                                         &  &       &  & 0<t
+          \end{align*}
+          \subfile{src/HW06/HW06P4.tex}
+\end{enumerate}
+
+
+\end{document}

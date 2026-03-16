@@ -1,0 +1,23 @@
+\documentclass[../../HW06.tex]{subfiles}
+
+\begin{document}
+\begin{align*}
+    u(x,t) & =\sum_{n=1}^{\infty}\sin(\lambda_{n}x)\left[ a_{n}\cos(\lambda_{n}ct) + b_{n}\sin(\lambda_{n}ct) \right] \\
+    a_{n}  & = \frac{2}{a} \int_{0}^{a} f(x) \sin\left(\frac{n\pi x}{a}\right)\,dx                                    \\
+    b_{n}  & = \frac{2}{n\pi c} \int_{0}^{a} g(x) \sin\left( \frac{n\pi x}{a} \right)\,dx
+\end{align*}
+\begin{align*}
+    a_{n} & = \frac{2}{a}\int_{0}^{\sfrac{a}{2}} U_{0}\sin\left( \frac{n \pi x}{a} \right)\,dx                        \\
+    a_{n} & = \frac{2U_{0}}{a} \left[ \frac{-a}{n\pi} \cos\left( \frac{n \pi x}{a} \right) \right]_{0}^{\sfrac{a}{2}} \\
+    a_{n} & = \frac{-2U_{0}}{n\pi} \left[ cos\left( \frac{n\pi}{2} \right) - 1\right]                                 \\
+    a_{n} & = \frac{2U_{0}}{n\pi} \left[ 1 - cos\left( \frac{n\pi}{2} \right)\right]
+\end{align*}
+\begin{align*}
+    b_{n} & = 0
+\end{align*}
+\begin{center}
+    \[
+        u(x,t) = \boxed{\sum_{n=1}^{\infty} \frac{2U_{0}\left( 1-\cos\left( \sfrac{n\pi}{2} \right) \right)}{n\pi}\cos\left( \frac{n\pi ct}{a} \right)\sin\left( \frac{n\pi x}{a} \right)}
+    \]
+\end{center}
+\end{document}

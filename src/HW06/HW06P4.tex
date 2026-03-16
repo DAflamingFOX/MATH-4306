@@ -1,0 +1,42 @@
+\documentclass[../../HW06.tex]{subfiles}
+
+\begin{document}
+\begin{align*}
+    X''T          & = \frac{1}{c}XT'' + kXT'                                  \\
+    \frac{X''}{X} & = \frac{1}{c}\frac{T''}{T} + k\frac{T'}{T} = -\lambda^{2} \\
+\end{align*}
+\begin{align*}
+    X'' + \lambda^{2}X     & = 0                                                                                  \\
+    X                      & = A\cos(\lambda x) + B\sin(\lambda x)                                                \\
+    X(0)                   & = A \Rightarrow A = 0                                                                \\
+    X(a)                   & = B\sin(\lambda a)                                                                   \\
+    0                      & = B\sin(\lambda a)                                                                   \\
+    B                      & \ne 0                                                                                \\
+    \sin(\lambda a)        & = 0                                                                                  \\
+    \lambda_{n}            & = \frac{n\pi}{a}                                                                     \\
+    \text{eigenvalue: }    & \lambda_{n}^{2} = \left(  \frac{n\pi}{a} \right)^{2}, \text{for } n = 1, 2, 3, \dots \\
+    \text{eigenfunction: } & X_{n}(x) = \sin(\lambda_{n}x)
+\end{align*}
+\begin{align*}
+    \frac{T''}{c^{2}} + kT' + \lambda^{2}T & = 0                                                                                         \\
+    r^{2} + kc^{2}r + \lambda^{2}c^{2}     & = 0                                                                                         \\
+    r                                      & = \frac{-kc^{2} \pm \sqrt{\left( kc^{2} \right)^{2} - 4\left( \lambda^{2}c^{2} \right)}}{2} \\
+    r                                      & = \frac{-kc^{2}}{2} \pm \frac{c}{2}\sqrt{k^{2}c^{2} - 4\lambda_{n}^{2}}                     \\
+    r                                      & = \frac{-kc^{2}}{2} \pm j \frac{c}{2} \sqrt{4\lambda_{n}^{2}-k^{2}c^{2}}                    \\
+    T(t)                                   & = e^{\frac{-kc^{2}}{2}t}\left[ a_{n}\cos(w_{n}t) + b_{n}\sin(w_{n}t) \right]                \\
+\end{align*}
+\begin{align*}
+    u(x,t)                              & = \sum_{n=1}^{\infty} e^{-\frac{kc^{2}}{2}t}\sin\left( \frac{n\pi x}{a} \right) \left[ a_{n}\cos(w_{n}) + b_{n}\sin(w_{n}t) \right] \\
+                                        & n=1,2,3,\dots \quad \lambda_{n}^{2}=\left( \frac{n \pi}{a} \right)^{2} \quad w_{n}=\frac{c}{2} \sqrt{4\lambda_{n}^{2}-k^{2}c^{2}}   \\
+    u(0,t)                              & = \sum_{n=1}^{\infty} a_{n}\sin\left( \frac{n\pi x}{a} \right)                                                                      \\
+    a_{n}                               & = \frac{2}{a} \int_{0}^{a}u(x,0)\sin\left( \frac{n\pi x}{a} \right)\,dx                                                             \\
+    u_{t}(0,t)                          & = \sum_{n=1}^{\infty} \left( \frac{-kc^{2}}{2}a_{n} + b_{n}w_{n} \right)\sin\left( \frac{n\pi x}{a} \right)                         \\
+    \frac{-kc^{2}}{2}a_{n} + b_{n}w_{n} & = \frac{2}{a}\int_{0}^{a} u_{t}(0,t) \sin\left( \frac{n\pi x}{a} \right)\,dx                                                        \\
+    b_{n}                               & = \frac{1}{w_{n}} \left[ \frac{2}{a}\int_{0}^{a} u_{t}(0,t) \sin\left( \frac{n\pi x}{a} \right)\,dx + \frac{kc^{2}}{2}a_{n} \right]
+\end{align*}
+\begin{gather*}
+    (x,t) = \sum_{n=1}^{\infty} e^{-\frac{kc^{2}}{2}t}\sin\left( \frac{n\pi x}{a} \right) \left[ a_{n}\cos(w_{n}t) + b_{n}\sin(w_{n}t) \right] \\
+    a_{n} = \frac{2}{a} \int_{0}^{a}u(x,0)\sin\left( \frac{n\pi x}{a} \right)\,dx                                                             \\
+    b_{n} = \frac{1}{w_{n}} \left[ \frac{2}{a}\int_{0}^{a} u_{t}(0,t) \sin\left( \frac{n\pi x}{a} \right)\,dx + \frac{kc^{2}}{2}a_{n} \right]
+\end{gather*}
+\end{document}
