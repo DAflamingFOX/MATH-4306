@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+
+\usepackage{subfiles}
+\input{src/preamble.tex}
+
+\title{Homework 7}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item Find a relation among the coefficients of the polynomial
+          \begin{center}
+              $
+                  p(x,y)=a+bx+cy+dx^{2}+exy+fy^{2}
+              $
+          \end{center}
+          that makes it satisfy the potential equation.
+          Choose a specific polynomial that satisfies the equation and show that,
+          if $\partial p / \partial x$ and $\partial p / \partial y$ are both zero at some point,
+          the surface there is saddle shaped.
+          \subfile{src/HW07/HW07P1.tex}
+    \item Show that $u(x,y)=x^{2}-y^{2}$ and $u(x,y)=xy$ are solutions of Laplace's equation.
+          What boundary conditions do these functions fulfill of the lines of $x=0$, $x=a$, $y=0$, $y=b$?
+          \subfile{src/HW07/HW07P2.tex}
+    \item Show that $r^{n}\sin(n\theta)$ and $r^{n}\cos(n\theta)$ both satisfy the potential equation in polar coordinates ($n = 0, 1, 2, \dots$).
+          \subfile{src/HW07/HW07P3.tex}
+    \item Solve the problem:
+          \begin{align*}
+               & \nabla^{2}u = 0,                                          &  & 0<x<a, &  & 0<y<b \\
+               & u(0, y) = 0, \quad u(a,y) = 0,                            &  &        &  & 0<y<b \\
+               & u(x, 0) = 0, \quad u(x,b) = f(x),                         &  & 0<x<a             \\
+               & f(x) = \begin{cases}
+                            \frac{2x}{a},                    & 0<x<\frac{a}{2}     \\
+                            2\left( \frac{a - x}{a} \right), & \frac{a}{2} < x < a
+                        \end{cases}
+          \end{align*}
+          \subfile{src/HW07/HW07P4.tex}
+\end{enumerate}
+
+\end{document}

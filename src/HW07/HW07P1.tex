@@ -1,0 +1,21 @@
+\documentclass[../../HW07.tex]{subfiles}
+
+\begin{document}
+\begin{align*}
+    p(x,y)              & = a + bx + cy + dx^{2} + exy + fy^{2}     \\
+    p_{x}               & = b + 2dx + ey                            \\
+    p_{xx}              & = 2d                                      \\
+    p_{y}               & = c + 2fy + ex                            \\
+    p_{yy}              & = 2f                                      \\
+    p_{xx} + p_{yy}     & = 0                                       \\
+    2d + 2f             & = 0                                       \\
+    d                   & = -f                                      \\
+    \text{let } a=b=c=e & =0,\quad d=1,\quad f=-1                   \\
+    p(x,y)              & = x^{2} - y^{2}                           \\
+    \\
+    D                   & = p_{xx}p_{yy}-p_{xy}^{2}                 \\
+    D                   & = 2d \cdot -2d - e^{2}                    \\
+    D                   & = -\left( 4d^{2} + e^{2} \right)          \\
+    D                   & < 0 \quad \therefore \quad \text{saddle}
+\end{align*}
+\end{document}

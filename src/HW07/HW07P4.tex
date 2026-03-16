@@ -1,0 +1,38 @@
+\documentclass[../../HW07.tex]{subfiles}
+
+\begin{document}
+\begin{align*}
+    u(x,y)                         & = XY           \\
+    X''Y + XY''                    & = 0            \\
+    \frac{X''}{X} = -\frac{Y''}{Y} & = -\lambda^{2} \\
+    X'' + \lambda^{2}X             & = 0            \\
+    Y'' - \lambda^{2}Y             & = 0
+\end{align*}
+\begin{align*}
+    X                                               & = A\cos(\lambda x) + B\sin(\lambda x)             \\
+    X(0)                                            & = A \Rightarrow A = 0                             \\
+    X(a)                                            & = B\sin(a\lambda)                                 \\
+    B                                               & \ne 0                                             \\
+    \lambda_{n} = \left( \frac{n\pi}{a} \right)^{2} & \,\quad X_{n}=\sin\left( \frac{n\pi x}{a} \right)
+\end{align*}
+\begin{align*}
+    Y''-\left( \frac{n\pi}{a} \right)^{2}Y & = 0                                                                             \\
+    Y                                      & = C\cosh\left( \frac{n\pi y}{a} \right) + D\sinh\left( \frac{n\pi y}{a} \right) \\
+    u(x,0)                                 & = X(x)Y(0) = 0 \Rightarrow Y(0) = 0                                             \\
+    Y(0)=C                                 & \Rightarrow C = 0                                                               \\
+    Y(y)                                   & = D\sinh\left( \frac{n\pi y}{a} \right)
+\end{align*}
+\begin{align*}
+    u(x,y)                                     & = \sum_{n=1}^{\infty} B_{n}\sin\left( \frac{n\pi x}{a} \right) \sinh\left( \frac{n\pi y}{a} \right)                                                                                                                                                                                                         \\
+    u(x,b)                                     & = \sum_{n=1}^{\infty} B_{n}\sin\left( \frac{n\pi x}{a} \right) \sinh\left( \frac{n\pi b}{a} \right)                                                                                                                                                                                                         \\
+    B_{n} \sinh\left( \frac{n\pi b}{a} \right) & = \frac{2}{a} \int_{0}^{a} f(x) \sin\left( \frac{n\pi x}{a} \right)                                                                                                                                                                                                                                         \\
+    B_{n}                                      & = \frac{2}{a \sinh\left( \frac{n\pi b}{a} \right)} \int_{0}^{a} f(x) \sin\left( \frac{n\pi x}{a} \right) \,dx                                                                                                                                                                                               \\
+    B_{n}                                      & = \frac{2}{a \sinh\left( \frac{n\pi b}{a} \right)} \left[ \int_{0}^{\sfrac{a}{2}} \frac{2x}{a} \sin\left( \frac{n\pi x}{a} \right) + \int_{\sfrac{a}{2}}^{a} \frac{2(a-x)}{a} \sin\left( \frac{n\pi x}{a} \right) \right]                                                                                   \\
+    B_{n}                                      & = \frac{2}{a \sinh\left( \frac{n\pi b}{a} \right)} \left[ -\frac{a^{2}}{2n\pi}\cos\left( \frac{n\pi}{2} \right) + \frac{a^{2}}{n^{2}\pi^{2}}\sin\left( \frac{n\pi}{2} \right) + \frac{a^{2}}{2n\pi}\cos\left( \frac{n\pi}{2} \right) + \frac{2a^{2}}{n^{2}\pi^{2}}\sin\left( \frac{n\pi}{2} \right) \right] \\
+    B_{n}                                      & = \frac{2}{a \sinh\left( \frac{n\pi b}{a} \right)} \left[ \frac{2}{a} \left( \frac{2a^{2}}{n^{2}\pi^{2}}\sin\left( \frac{n\pi}{2} \right) \right) \right]                                                                                                                                                   \\
+    B_{n}                                      & = \frac{8}{n^{2}\pi^{2}\sinh\left( \frac{n\pi b}{a} \right)}\sin\left( \frac{n\pi}{2} \right)
+\end{align*}
+\begin{gather*}
+    u(x,y) = \frac{8}{\pi^{2}} \sum_{n=1}^{\infty} \frac{\sin\left( \sfrac{n\pi}{2} \right)}{n^{2}\sinh\left( \sfrac{n\pi b}{a} \right)} \sin\left( \frac{n\pi x}{a} \right) \sinh\left( \frac{n\pi y}{a} \right)
+\end{gather*}
+\end{document}

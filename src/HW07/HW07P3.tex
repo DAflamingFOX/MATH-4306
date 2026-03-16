@@ -1,0 +1,28 @@
+\documentclass[../../HW07.tex]{subfiles}
+
+\begin{document}
+\begin{align*}
+    u(r,\theta)      & = r^{n}\cos(n\theta)                                                                                                                    \\
+    u_{r}            & =nr^{n-1}\cos(n\theta)                                                                                                                  \\
+    u_{rr}           & =n(n-1)r^{n-2}\cos(n\theta)                                                                                                             \\
+    u_{\theta}       & =-nr^{n}\sin(n\theta)                                                                                                                   \\
+    u_{\theta\theta} & =-n^{2}r^{n}\cos(n\theta)                                                                                                               \\
+    0                & = n(n-1)r^{n-2}\cos(n\theta) + \frac{1}{r}\left[ nr^{n-1}\cos(n\theta) \right] + \frac{1}{r^{n}}\left[ -n^{2}r^{n}\cos(n\theta) \right] \\
+    0                & = n(n-1)r^{n-2}\cos(n\theta) + nr^{n-2}\cos(n\theta) - n^{2}r^{n-2}\cos(n\theta)                                                        \\
+    0                & = \left( n(n-1) + n - n^{2} \right)r^{n-2}\cos(n\theta)                                                                                 \\
+    0                & = \left( n^{2} - n + n - n^{2} \right)r^{n-2}\cos(n\theta)                                                                              \\
+    0                & = 0
+\end{align*}
+\begin{align*}
+    u(r,\theta)      & = r^{n}\sin(n\theta)                                                                                                                    \\
+    u_{r}            & =nr^{n-1}\sin(n\theta)                                                                                                                  \\
+    u_{rr}           & =n(n-1)r^{n-2}\sin(n\theta)                                                                                                             \\
+    u_{\theta}       & =nr^{n}\cos(n\theta)                                                                                                                    \\
+    u_{\theta\theta} & =-n^{2}r^{n}\sin(n\theta)                                                                                                               \\
+    0                & = n(n-1)r^{n-2}\sin(n\theta) + \frac{1}{r}\left[ nr^{n-1}\sin(n\theta) \right] + \frac{1}{r^{n}}\left[ -n^{2}r^{n}\sin(n\theta) \right] \\
+    0                & = n(n-1)r^{n-2}\sin(n\theta) + nr^{n-2}\sin(n\theta) - n^{2}r^{n-2}\sin(n\theta)                                                        \\
+    0                & = \left( n(n-1) + n - n^{2} \right)r^{n-2}\sin(n\theta)                                                                                 \\
+    0                & = \left( n^{2} - n + n - n^{2} \right)r^{n-2}\sin(n\theta)                                                                              \\
+    0                & = 0                                                                                                                                     \\
+\end{align*}
+\end{document}
