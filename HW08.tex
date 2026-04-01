@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+
+\usepackage{subfiles}
+\input{src/preamble.tex}
+
+\title{Homework 8}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+      \item Solve the problem consisting of the potential equation on the rectangle $0<x<a$, $0<y<b$ with the given boundary conditions. Two of the three are very easy if a polynomial is subtracted from $u$.
+            \begin{enumerate}
+                  \addtocounter{enumii}{1}
+                  \item $\diffp{u}{x}(0,y)=0,\, \diffp{u}{x}(a,y)=0;\, u(x,0)=0,\, u(x,b)=1$
+                        \subfile{src/HW08/HW08P1b.tex}
+                  \item $\diffp{u}{x}(x,0)=0,\, \diffp{u}{x}(x,b)=0;\, u(0,y)=1,\, u(a,y)=1$
+                        \subfile{src/HW08/HW08P1c.tex}
+            \end{enumerate}
+      \item Solve the potential equation in the slot, $0<x<a$, $0<y$, for each of these sets of boundary conditions.
+            \begin{enumerate}
+                  \item $\diffp{u}{x}(0,y)=0,\, u(a,y)=0,\, u<y;\, u(x,0)=1,\, 0<x<a$
+                        \subfile{src/HW08/HW08P2a.tex}
+                        \addtocounter{enumii}{1}
+                  \item $u(0,y)=0,\, u(a,y)=f(y)=\begin{cases}
+                                    1, & 0<y<b \\
+                                    0, & b<y
+                              \end{cases} \\
+                              \diffp{u}{y}(x,0)=0,\, 0<x<a$
+                        \subfile{src/HW08/HW08P2c.tex}
+            \end{enumerate}
+      \item Solve the problem of potential in a slot under the boundary conditions
+            \begin{gather*}
+                  u(x,0) = 1,\, u(0,y)=u(a,y)=e^{-y}
+            \end{gather*}
+            \subfile{src/HW08/HW08P3.tex}
+      \item Show that the function $v(x,y)$ given here satisfies the potential equation and the boundary conditions on the "long" sides in Exercise 7, provided that $\cos(\sfrac{a}{2})\ne 0$.
+            \begin{gather*}
+                  v(x,y)=\frac{\cos\left( x - \frac{1}{2}a \right)}{\cos\left( \frac{1}{2}a \right)} e^{-y}
+            \end{gather*}
+            What partial differential equation and boundary conditions are satisfied by $w(x,y) = u(x,y) - v(x,y)$, if $u$ is the function of Exercise 7?
+            \subfile{src/HW08/HW08P4.tex}
+\end{enumerate}
+
+\end{document}

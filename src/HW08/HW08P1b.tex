@@ -1,0 +1,29 @@
+\documentclass[../../HW08.tex]{subfiles}
+
+\begin{document}
+\begin{gather*}
+    u_{xx} + u_{yy}=0
+\end{gather*}
+\begin{align*}
+    u_{x}(0,y) & = 0 \\
+    u_{x}(a,y) & = 0 \\
+    u(x,0)     & = 0 \\
+    u(x,b)     & = 1
+\end{align*}
+\begin{align*}
+    P''(y) & = 0                             \\
+    P(y)   & = Ay + B                        \\
+    P(0)   & = 0 \Rightarrow B = 0           \\
+    P(b)   & = 1 \Rightarrow A = \frac{1}{b} \\
+    v(x,y) & = \frac{y}{b}                   \\
+\end{align*}
+\begin{align*}
+    v_{x}(0,y) & = 0 \\
+    v_{x}(a,y) & = 0   \\
+\end{align*}
+\begin{align*}
+    w(x,y)             & = u(x,y) - \frac{y}{b} \\
+    \nabla^{2}w        & = 0                    \\
+    \Rightarrow u(x,y) & = \frac{y}{b}
+\end{align*}
+\end{document}

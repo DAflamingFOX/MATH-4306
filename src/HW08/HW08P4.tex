@@ -1,0 +1,35 @@
+\documentclass[../../HW08.tex]{subfiles}
+
+\begin{document}
+\begin{align*}
+    \nabla^{2} u & = 0               \\
+    u(x,0)       & = 1               \\
+    u(0,y)       & = u(a,y) = e^{-y}
+\end{align*}
+\begin{align*}
+    v(x,y)      & = \frac{\cos(x - \sfrac{1}{2}a)}{\cos(\sfrac{1}{2}a)}e^{-y}  \\
+    v_{x}(x,y)  & = \frac{-\sin(x - \sfrac{1}{2}a)}{\cos(\sfrac{1}{2}a)}e^{-y} \\
+    v_{xx}(x,y) & = \frac{-\cos(x - \sfrac{1}{2}a)}{\cos(\sfrac{1}{2}a)}e^{-y} \\
+    v_{y}(x,y)  & = -\frac{\cos(x - \sfrac{1}{2}a)}{\cos(\sfrac{1}{2}a)}e^{-y} \\
+    v_{yy}(x,y) & = \frac{\cos(x - \sfrac{1}{2}a)}{\cos(\sfrac{1}{2}a)}e^{-y}  \\
+\end{align*}
+\begin{align*}
+    v_{xx}+v_{yy} & = 0                                                                                                                      \\
+    0             & = \frac{-\cos(x - \sfrac{1}{2}a)}{\cos(\sfrac{1}{2}a)}e^{-y} + \frac{\cos(x - \sfrac{1}{2}a)}{\cos(\sfrac{1}{2}a)}e^{-y} \\
+    0             & = 0
+\end{align*}
+\begin{align*}
+    \nabla^{2}w     & = \nabla^{2}u - \nabla^{2}v                             \\
+    w_{xx} + w_{yy} & = 0                                                     \\
+    w(0,y)          & = e^{-y} - e^{-y} = 0                                   \\
+    w(a,y)          & = e^{-y} - e^{-y} = 0                                   \\
+    v(x,0)          & = \frac{\cos(x-\sfrac{1}{2}a)}{\cos(\sfrac{1}{2}a)}     \\
+    w(x,0)          & = 1 - \frac{\cos(x-\sfrac{1}{2}a)}{\cos(\sfrac{1}{2}a)}
+\end{align*}
+\begin{align*}
+    w_{xx} + w_{yy} & = 0                                                     \\
+    w(0,y)          & = 0                                                     \\
+    w(a,y)          & = 0                                                     \\
+    w(x,0)          & = 1 - \frac{\cos(x-\sfrac{1}{2}a)}{\cos(\sfrac{1}{2}a)}
+\end{align*}
+\end{document}

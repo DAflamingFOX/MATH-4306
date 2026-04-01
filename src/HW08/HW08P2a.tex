@@ -1,0 +1,34 @@
+\documentclass[../../HW08.tex]{subfiles}
+
+\begin{document}
+\begin{align*}
+    u_{xx}+u_{yy} & =0                              \\
+    \frac{X''}{X} & = -\frac{Y''}{Y} = -\lambda^{2}
+\end{align*}
+\begin{align*}
+    X''+\lambda^{2}X & =0                                                     \\
+    X                & =A\cos(\lambda x)+B\sin(\lambda x)                     \\
+    X'(0)            & = 0                                                    \\
+    X'(0)            & = -A\lambda \sin(\lambda x) + B\lambda \cos(\lambda x) \\
+    \Rightarrow  B   & =0                                                     \\
+    X(a)             & = 0                                                    \\
+    0                & = A\cos(\lambda a)                                     \\
+    \cos(\lambda a)  & = 0                                                    \\
+    \lambda_{n}      & = \frac{(2n+1)\pi}{2a}                                 \\
+    X_{n}(x)         & = \cos\left(  \frac{(2n+1)\pi x}{2a}\right)
+\end{align*}
+\begin{align*}
+    Y''-\lambda_{n}^{2}Y & =0                       \\
+    Y_{n}(y)             & = B_{n}e^{-\lambda_{n}y}
+\end{align*}
+\begin{align*}
+    u(x,y) & = \sum_{n=0}^{\infty}A_{n}\cos\left(  \frac{(2n+1)\pi x}{2a}\right)e^{-\frac{(2n+1)\pi y}{2a}}                                 \\
+    u(x,0) & = 1                                                                                                                            \\
+    1      & = \sum_{n=0}^{\infty}A_{n}\cos\left(  \frac{(2n+1)\pi x}{2a}\right)                                                            \\
+    A_{n}  & = \frac{2}{a} \int_{0}^{a}1 \cos\left(  \frac{(2n+1)\pi x}{2a}\right)                                                          \\
+    A_{n}  & = \frac{2}{a} \left[ \frac{2a}{(2n+1)\pi} \sin\left( \frac{(2n+1)\pi x}{2a} \right) \right]_{0}^{a}                            \\
+    A_{n}  & = \frac{4}{(2n+1)\pi} \sin\left( \frac{(2n+1) \pi }{2} \right)                                                                 \\
+    A_{n}  & = \frac{4}{(2n+1)\pi} (-1)^{n}                                                                                                 \\
+    u(x,y) & = \frac{4}{\pi} \sum_{n=0}^{\infty} \frac{(-1)^{n}}{2n+1} \cos\left(  \frac{(2n+1)\pi x}{2a}\right)e^{-\frac{(2n+1)\pi y}{2a}}
+\end{align*}
+\end{document}

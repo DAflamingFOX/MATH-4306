@@ -1,0 +1,34 @@
+\documentclass[../../HW08.tex]{subfiles}
+
+\begin{document}
+\begin{align*}
+    u_{xx}+u_{yy} & = 0                            \\
+    \frac{X''}{X} & = -\frac{Y''}{Y} = \lambda^{2}
+\end{align*}
+\begin{align*}
+    Y'' + \lambda^{2}Y & = 0                                                          \\
+    Y                  & = c_{1}\cos(\lambda y) + c_{2}\sin(\lambda y)                \\
+    u_{y}(x,0)         & = 0 \Rightarrow Y'(0) = 0                                    \\
+    Y'                 & = -c_{1}\lambda\sin(\lambda y) + c_{2}\lambda\cos(\lambda y) \\
+    0                  & = c_{2}\lambda \Rightarrow c_{2} = 0                         \\
+    Y                  & = \cos(\lambda y)
+\end{align*}
+\begin{align*}
+    X'' - \lambda^{2}X & = 0                                             \\
+    X                  & = c_{3}\cosh(\lambda x) + c_{4}\sinh(\lambda x) \\
+    u(0,y)             & = 0 \Rightarrow X(0) = 0                        \\
+    c_{3}              & = 0                                             \\
+    X                  & = \sinh(\lambda x)
+\end{align*}
+\begin{align*}
+    u(x,y)     & = \int_{0}^{\infty}A(\lambda)\sinh(\lambda x)\cos(\lambda y)\,d\lambda                                                     \\
+    u(a,y)     & = \int_{0}^{\infty}\underbrace{A(\lambda)\sinh(\lambda a)}_{B(\lambda)} \cos(\lambda y)\,d\lambda                          \\
+    B(\lambda) & = \frac{2}{\pi} \int_{0}^{\infty} f(y)\cos(\lambda y)\,dy                                                                  \\
+    B(\lambda) & = \frac{2}{\pi} \int_{0}^{b} \cos(\lambda y)\,dy                                                                           \\
+    B(\lambda) & = \frac{2}{\pi} \left[ \frac{1}{\lambda}\sin(\lambda y) \right]_{0}^{b}                                                    \\
+    B(\lambda) & = \frac{2\sin(b\lambda)}{\lambda \pi}                                                                                      \\
+    A(\lambda) & = \frac{B(\lambda)}{\sinh(a \lambda)}                                                                                      \\
+    A(\lambda) & = \frac{2\sin(b \lambda)}{\lambda \pi \sinh(a\lambda)}                                                                     \\
+    u(x,y)     & = \frac{2}{\pi} \int_{0}^{\infty} \frac{\sin(b\lambda)}{\lambda \sinh(a\lambda)} \sinh(\lambda x)\cos(\lambda y)\,d\lambda
+\end{align*}
+\end{document}

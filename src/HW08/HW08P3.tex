@@ -1,0 +1,48 @@
+\documentclass[../../HW08.tex]{subfiles}
+
+\begin{document}
+\begin{align*}
+    \nabla^{2} u & = 0               \\
+    u(x,0)       & = 1               \\
+    u(0,y)       & = u(a,y) = e^{-y}
+\end{align*}
+\begin{gather*}
+    u = u_{1} + u_{2}
+\end{gather*}
+\begin{align*}
+    u_{1xx}+u_{1yy}    & = 0                                                                                                                                \\
+    u_{1}(0,y)         & = 0                                                                                                                                \\
+    u_{1}(a,y)         & = 0                                                                                                                                \\
+    u_{1}(x,0)         & = 1                                                                                                                                \\
+    X'' + \lambda^{2}X & = 0                                                                                                                                \\
+    X_{n}              & = \sin\left( \frac{n\pi x}{a} \right),\quad \lambda_{n}= \frac{n\pi}{a}                                                            \\
+    Y''-\lambda_{n}Y   & = 0                                                                                                                                \\
+    Y_{n}              & = e^{\sfrac{-n\pi y}{a}}                                                                                                           \\
+    u_{1}(x,y)         & = \sum_{n=1}^{\infty}A_{n}\sin\left( \frac{n\pi x}{a} \right)  e^{\sfrac{-n\pi y}{a}}                                              \\
+    u_{1}(x,0)         & = 1 = \sum_{n=1}^{\infty}A_{n}\sin\left( \frac{n\pi x}{a} \right)                                                                  \\
+    A_{n}              & = \frac{2}{a}\int_{0}^{a}\sin\left( \frac{n\pi x}{a} \right)\,dx                                                                   \\
+    A_{n}              & = \frac{2}{a} \frac{a}{n\pi} \left[ \cos\left( \frac{n\pi x}{a} \right) \right]_{0}^{a}                                            \\
+    A_{n}              & = \frac{2}{n\pi} \left( 1-(-1)^{n} \right)                                                                                         \\
+    u_{1}(x,y)         & = \frac{2}{\pi}\sum_{n=1}^{\infty}\frac{1}{n} \left( 1-(-1)^{n} \right)\sin\left( \frac{n\pi x}{a} \right)  e^{\sfrac{-n\pi y}{a}}
+\end{align*}
+\begin{align*}
+    u_{2xx}+u_{2yy}                 & = 0                                                                                                                                                                                                    \\
+    u_{2}(x,0)                      & = 0                                                                                                                                                                                                    \\
+    u_{2}(0,y)                      & = e^{-y}                                                                                                                                                                                               \\
+    u_{2}(a,y)                      & = e^{-y}                                                                                                                                                                                               \\
+    Y'' + \lambda^{2}Y              & = 0                                                                                                                                                                                                    \\
+    Y(y)                            & = \sin(\lambda y)                                                                                                                                                                                      \\
+    X'' - \lambda^{2}X              & = 0                                                                                                                                                                                                    \\
+    X(x)                            & = c_{1}\cosh(\lambda x) + c_{2}\sinh(\lambda x)                                                                                                                                                        \\
+    u_{2}(x,y)                      & = \int_{0}^{\infty} \left[ C_{1}(\lambda) \frac{\sinh(\lambda(a-x))}{\sinh(\lambda a)} + C_{2}(\lambda)\frac{\sinh(\lambda x)}{\sinh(\lambda a)} \right]\sin( \lambda y )\, d\lambda                   \\
+    u_{2}(0,y) = e^{-y}             & = \int_{0}^{\infty} C_{1}(\lambda)\sin(\lambda y)\,d\lambda                                                                                                                                            \\
+    u_{2}(a,y) = e^{-y}             & = \int_{0}^{\infty} C_{2}(\lambda)\sin(\lambda y)\,d\lambda                                                                                                                                            \\
+    C_{1}(\lambda) = C_{2}(\lambda) & = \frac{2}{\pi}\int_{0}^{\infty} e^{-y}\sin(\lambda y)\,dy                                                                                                                                             \\
+    C_{1}(\lambda) = C_{2}(\lambda) & = \frac{2}{\pi} \frac{\lambda}{1 + \lambda^{2}}                                                                                                                                                        \\
+    u_{2}(x,y)                      & = \frac{2}{\pi} \int_{0}^{\infty}  \frac{\lambda}{1 + \lambda^{2}} \left[ \frac{\sinh(\lambda(a-x))}{\sinh(\lambda a)} + \frac{\sinh(\lambda x)}{\sinh(\lambda a)} \right]\sin( \lambda y )\, d\lambda
+\end{align*}
+\begin{multline*}
+    u(x,y) = \frac{2}{\pi}\sum_{n=1}^{\infty} \left[ \frac{1}{n} \left( 1-(-1)^{n} \right)\sin\left( \frac{n\pi x}{a} \right)  e^{\sfrac{-n\pi y}{a}} \right] \\
+    + \frac{2}{\pi} \int_{0}^{\infty}  \frac{\lambda}{1 + \lambda^{2}} \left[ \frac{\sinh(\lambda(a-x))}{\sinh(\lambda a)} + \frac{\sinh(\lambda x)}{\sinh(\lambda a)} \right]\sin( \lambda y )\, d\lambda
+\end{multline*}
+\end{document}
